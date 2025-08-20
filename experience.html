@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Daoud - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid white;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #ffffff;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      width: 20px;
+      height: 20px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+      right: auto;
+    }
+
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-content img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .timeline-content p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .timeline-content ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .timeline-content ul li {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .location-info {
+      position: absolute;
+      top: 20px;
+      width: 160px;
+      font-size: 14px;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .location-info img {
+      width: 24px;
+      height: 16px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item:nth-child(odd) .location-info {
+      right: -180px;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .location-info {
+      left: -180px;
+      text-align: right;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <h1>Mohamed Daoud</h1>
+      <p class="subtitle">Renewable Energy | Aeronautical | IT | Automotive</p>
+    </header>
+    <nav>
+      <a href="index.html" class="nav-link">About Me</a>
+      <a href="experience.html" class="nav-link">Professional Experience</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+    </nav>
+
+    <div class="container">
+      <div class="timeline">
+
+         <!-- Capgemini -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\Capgemini.png" alt="Capgemini Logo">
+            <h3>Capgemini</h3>
+            <ul>
+            <p><strong>Role:</strong> Senior Analyst / Consultant</p>
+            <p><strong>Mission:</strong>
+               <li>Deliver IT infrastructure support, proactive maintenance, and strategic solutions to boost productivity and security for BAYER Corp Science.</li>
+               <p></p>
+            <p><strong>Execution:</strong>
+                <p></p>
+               <li>Automated Job Routine and team management tasks using  PowerShell / Python</li>
+               <li>Techinchally led and supported a team of 5 French speakers,</li>
+               <li>Resolved complex issues across OS, networks, business apps, and security systems.</li>
+                <p></p>
+            <p><strong>Expertise:</strong>
+                <p></p>
+               <li>Windows/macOS, AD, VPN/DNS, Microsoft 365, SAP ERP/CRM, MFA, BitLocker, ServiceNow, ITIL
+               <li>cross-team escalation handling.
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/eg.svg" alt="Egypt">
+            <p>New cairo, Egypt</p>
+            <p><strong>Dec 2024 – Present</strong></p>
+          </div>
+        </div>
+
+
+         <!-- T&S -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\T&S Logo.png" alt="T&S Logo">
+            <h3>Technology & Strategy (T&S)</h3>
+            <ul>
+            <p><strong>Role:</strong> System Engineer</p>
+            <p><strong>Objectives:</strong>
+    <li><strong>Ensure Functional Safety Compliance:</strong> Define, analyze, and validate system-level safety requirements in alignment with ISO 26262, ensuring hazard mitigation and ASIL traceability throughout the V-model lifecycle.</li>
+    <li><strong>Architect Reliable Automotive Systems:</strong> Develop and maintain robust system architectures that support safety goals, technical constraints, and integration of hardware/software components under ASPICE guidelines.</li>
+    <li><strong>Manage Requirements Traceability:</strong> Establish and maintain bidirectional traceability between stakeholder requirements, system specifications, safety goals, and verification artifacts using Polarion.</li>
+    <li><strong>contribute in Safety Analysis Activities:</strong> Conduct and document safety analyses (e.g., HARA, FMEA, FTA) to identify potential failure modes and ensure system resilience under fault conditions.</li>
+    <li><strong>Support ASPICE-Compliant Development:</strong> Collaborate across disciplines to ensure system engineering work products meet ASPICE process maturity levels (SYS.1–SYS.5), including consistency checks, reviews, and audits.</li>
+    <li><strong>Coordinate Verification & Validation:</strong> Define and execute system-level test strategies to validate functional and safety requirements, ensuring coverage of nominal and degraded operating scenarios.</li>
+    <li><strong>Interface with Cross-Functional Teams:</strong> Act as a technical bridge between software, hardware, and safety teams to align design decisions with safety goals and process compliance.</li>
+
+               <p></p>
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/fr.svg" alt="France">
+            <p>Lyon, France</p>
+            <p><strong>Jan 2024 – Mar 2024</strong></p>
+          </div>
+        </div>
+
+        <!-- Valeo -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\Valeo.png" alt="Valeo">
+            <h3>Valeo</h3>
+            <ul>
+            <p><strong>Role:</strong> System Engineer</p>
+            <p><strong>Mission:</strong>
+               <li>Design and develop systems according to Valeo and A-SPICE system engineering methodology 
+                   standard and Perform functional analysis and requirement elicitation with the customer and 
+                   stakeholders to establish the detailed requirement in the specification at system and system elements 
+                   level beside Supporting project team members for system implementation.</li>
+               <p></p>
+            <p><strong>Highlights:</strong>
+               <p></p>
+               <strong>Low Voltage Product : 48-volts Belt starter generator</strong>
+               <p></p>
+               <li>Review test cases specifications and analyze results in order to allocate the issue and solve system issues 
+               <li>Modify system requirements specifications to refine system test cases specifications 
+               <li>Review system architecture specifications and contribute in system internal interfaces requirements specifications 
+               <li>Specify “OBD“ On board diagnostics requirements and update “FSM” system fault state matrix document  
+               <li>Contribute in Start-up sequence and Fault management specification  
+               <p></p>
+               <strong>High Voltage Product : 800 volts Inverter</strong>
+               <p></p>
+               <li>Specify system and architecture requirements SYS1/ SYS2/ SYS3 for multiple functions :  
+<ol> 1- State machine </ol>
+<ol> 2- Safe state management </ol>
+<ol> 3- AC Voltage estimation  </ol>
+<ol> 4- DC link temperature estimation & current derating </ol>
+<ol> 5- Convert electrical power to mechanical power </ol>
+<ol> 6- EMC </ol>
+<ol> 7- Life time cycle </ol>
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/eg.svg" alt="Egypt">
+            <p>Gizeh, Egypt</p>
+            <p><strong>Apr 2022 – Jan 2024</strong></p>
+          </div>
+        </div>
+
+        <!-- IBM -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\IBM.png" alt="IBM">
+            <h3>IBM</h3>
+            <ul>
+            <p><strong>Role:</strong> Hardware Support Engineer</p>
+            <p><strong>Mission:</strong>
+               <li>Provide a high quality Hardware maintenance services for IBM & Lenovo:  Low end, High end, storage 
+machines and support IBM partners in their business infrastructure development and efficiency </li>
+               <p></p>
+            <p><strong>Highlights:</strong>
+               <li>Design & develop systems according to A-SPICE system Engineering methodology standard</li>
+               <li>Establish Technical Action plans and manage IBM technicians interventions and defective parts logistics </li>
+               <li>Support technicians while on-site intervention </li>
+               <li>Collaborate with lab technicians to duplicate and solve consistent issues in order to develop action plans </li> 
+               <li>Support clients IT leaders to manage periodic maintenance and reduce downtime </li>
+               <li>Provide firmware/software best recipe based on client infrastructure compatibility  </li>
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/eg.svg" alt="Egypt">
+            <p>Gizeh, Egypt</p>
+            <p><strong>Jun 2021 – Mar 2022</strong></p>
+          </div>
+        </div>
+
+        <!-- FACT Group -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\FACT.png" alt="FACT">
+            <h3>FACT Group</h3>
+            <ul>
+            <p><strong>Role:</strong> R&D Electrical Design Engineer</p>
+            <p><strong>Mission:</strong>
+               <li>In the context of the European project CLEAN SKY (CFP10) a new innovative (high flow rate / 
+constant pressure) valve for inert gas discharge that is dedicated to fire suppression systems in 
+large aircrafts, to be sized and developed using a new design of actuator </li>
+               <p></p>
+            <p><strong>Highlights:</strong>
+               <li>Size and model different linear actuators prototypes based on different topologies found in literature </li>
+               <li>Perform simulations analysis regarding the different operating points required by the gaz inerting system </li>
+               <li>Perform sensitivity analysis for geometrical dimensions and material characteristics impacting force and stroke length </li>
+               <li>Design by optimization for the linear actuator based on sensitivity analysis outcome and minimize volume/Weight </li>
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/fr.svg" alt="France">
+            <p>Toulouse, France</p>
+            <p><strong>Apr 2020 - Oct 2020     </strong></p>
+          </div>
+        </div>
+
+        <!-- L2EP Internship -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <img src="img\L2EP.png" alt="L2EP Logo">
+            <h3>Laboratoire d'Electrotechnique et d'Electronique de Puissance (L2EP)</h3>
+            <ul>
+            <p><strong>Role:</strong> R&D Technical internship / Electrical Design Engineer</p>
+            <p><strong>Mission:</strong>
+               <li>In calobaration with the electrical engineers in L2EP, an optimized design of 
+Mechanical/Electrical power conversion system used in large wind turbines of 3 MW was 
+proposed and defended on 22/02/2020  </li>
+               <p></p>
+            <p><strong>Highlights:</strong>
+             <li>Model different prototypes for DFIM / PMSM using FEMM and perform simulations </li>
+             <li>Model different switching cells & capacitor banks using PSIM and perform simulations </li>
+             <li>Make system elements choices based on best of simulation outcome and control algorithm efficiency </li>
+             <li>Perform system simulations based on different operating points related to wind profile </li>
+             <li>Validate the system behavior in different scenarios of operation</li>
+            </ul>
+          </div>
+          <div class="location-info">
+            <img src="https://flagcdn.com/fr.svg" alt="France">
+            <p>Lille, France</p>
+            <p><strong>Oct 2019 - Feb 2020     </strong></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

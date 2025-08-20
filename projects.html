@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Daoud - Projects</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      color: #ffffff;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid white;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .skills-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .category {
+      margin-top: 40px;
+    }
+
+    .category h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #555;
+      padding-bottom: 5px;
+    }
+
+    .skill {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 10px 0;
+      padding: 15px;
+      background-color: #222;
+      border-radius: 10px;
+      animation: slideIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .skill span {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .skill p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 5px 0;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mohamed Daoud</h1>
+    <p class="subtitle">MBD | Machine Design | Energy management | Power electronics | Drive Control </p>
+  </header>
+
+  <nav>
+    <a href="index.html"class="nav-link">About Me</a>
+    <a href="experience.html" class="nav-link">Professional Experience</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+  </nav>
+
+  <div class="skills-container">
+    <!-- L2EP -->
+    <div class="category">
+      <h2>Research & Technical Internship</h2>
+      <div class="skill" style="animation-delay: 0.1s;">
+        <span>L2EP – Lille, France</span>
+        <p><strong>Role:</strong> Technical Intern</p>
+        <p><strong>Mission:</strong> Optimized control design for 3MW wind turbine power conversion systems.</p>
+        <p><strong>Tools:</strong> FEMM, Matlab, Simulink, PSIM</p>
+        <p><strong>Highlights:</strong></p>
+        <ul>
+          <li>Built dynamic control model for DFIM machine.</li>
+          <li>Designed back-to-back converter system in PSIM.</li>
+          <li>Implemented MPPT strategy for wind profiles.</li>
+          <li>Validated system behavior across scenarios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FACT Group -->
+    <div class="category">
+      <h2>R&D in Aerospace Systems</h2>
+      <div class="skill" style="animation-delay: 0.2s;">
+        <span>FACT Group – Toulouse, France</span>
+        <p><strong>Role:</strong> Electrical Design Engineer</p>
+        <p><strong>Mission:</strong> Design linear actuator for inerting system in aircrafts (CLEAN SKY project).</p>
+        <p><strong>Tools:</strong> JMAG, SOLIDWORKS, HEEDS, Matlab</p>
+        <p><strong>Highlights:</strong></p>
+        <ul>
+          <li>Modeled actuator prototypes and optimized weight.</li>
+          <li>Performed sensitivity analysis for force/stroke.</li>
+          <li>Designed actuator based on simulation outcomes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IBM -->
+    <div class="category">
+      <h2>IT Infrastructure & Support</h2>
+      <div class="skill" style="animation-delay: 0.3s;">
+        <span>IBM – Gizeh, Egypt</span>
+        <p><strong>Role:</strong> Hardware Support Engineer</p>
+        <p><strong>Mission:</strong> Provide hardware support for IBM/Lenovo systems.</p>
+        <p><strong>Tools:</strong> OCPM, MSD, Salesforce</p>
+        <p><strong>Highlights:</strong></p>
+        <ul>
+          <li>Managed technician interventions and logistics.</li>
+          <li>Resolved client issues and improved infrastructure.</li>
+          <li>Recommended firmware/software upgrades.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Valeo -->
+    <div class="category">
+      <h2>Automotive Systems Engineering</h2>
+      <div class="skill" style="animation-delay: 0.4s;">
+        <span>Valeo – Gizeh, Egypt</span>
+        <p><strong>Role:</strong> System Engineer</p>
+        <p><strong>Mission:</strong> Develop systems following A-SPICE methodology.</p>
+        <p><strong>Tools:</strong> Matlab, Simulink, TargetLink, DOORS, Polarion, Canoe, SVN</p>
+        <p><strong>Highlights:</strong></p>
+        <ul>
+          <li>Specified system architecture and diagnostics (OBD, FSM).</li>
+          <li>Contributed to fault management and startup sequences.</li>
+          <li>Defined SYS1–SYS3 requirements for HV inverter functions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
