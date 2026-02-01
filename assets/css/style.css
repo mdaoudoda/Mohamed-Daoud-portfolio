@@ -1,0 +1,755 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Text Utility Classes */
+.text-highlight {
+    color: #00ffff;
+    /* Cyan - Primary Theme Color */
+    font-weight: bold;
+}
+
+.text-accent {
+    color: #ffcc00;
+    /* Gold - Secondary Accent */
+}
+
+/* Dates/Meta info */
+.text-date {
+    color: #00ffff;
+    /* Consistent with timeline dates */
+}
+
+.text-location {
+    color: #ffffff;
+}
+
+/* Internal Pages Gradient Background */
+body.internal-page {
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Home Page Styles */
+body.home {
+    overflow-x: hidden;
+}
+
+/* Body & Background */
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    /* Dark background since video is gone */
+    background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+}
+
+#video-background {
+    display: none;
+    /* Removed */
+}
+
+/* Home Layout - Grid System */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+    }
+}
+
+.span-full {
+    grid-column: 1 / -1;
+}
+
+.about-card,
+.education-card,
+.journey-card,
+.profile-card,
+.contact-card {
+    background: rgba(25, 25, 25, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-image-container {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.profile-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.profile-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #00ffff;
+}
+
+/* Contact Card Styles */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.contact-item .icon {
+    font-size: 1.4rem;
+}
+
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #00ffff;
+}
+
+.hobbies ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.hobbies li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #ccc;
+}
+
+.hobbies li::before {
+    content: '‣';
+    color: #ffcc00;
+    position: absolute;
+    left: 0;
+}
+
+.quote {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #ffcc00;
+    border-radius: 5px;
+}
+
+/* Education Items */
+.edu-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.edu-item:last-child {
+    border-bottom: none;
+}
+
+.edu-item h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.edu-meta {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 5px 0;
+}
+
+/* Media Gallery Section */
+.gallery-section {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.video-scroller {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #00ffff #1a1a1a;
+}
+
+.video-card {
+    flex: 0 0 400px;
+    /* Fixed width cards */
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.video-card video {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    display: block;
+}
+
+.video-card p {
+    padding: 10px;
+    text-align: center;
+    color: #ccc;
+    margin: 0;
+}
+
+.video-placeholder {
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    color: #555;
+    font-weight: bold;
+}
+
+.content {
+    /* Removed fixed positioning related to video bg */
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(0, 0, 0, 0.7); Remove overlay */
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.home-section {
+    max-width: 100%;
+    /* Full width */
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 0.5rem;
+}
+
+.about-me {
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-top: 2rem;
+}
+
+/* Travel Section Styles */
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.country-group {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 3px solid #00ffff;
+}
+
+.country-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.country-group p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Map Markers */
+.map-marker {
+    position: absolute;
+    color: #00ffff; /* Neon Cyan */
+    font-size: 14px;
+    font-weight: bold;
+    transform: translate(-50%, -50%); /* Center on coordinate */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.map-marker:hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    color: #fff;
+    z-index: 10;
+}
+
+/* Experience Page Styles */
+.container {
+    max-width: 100%;
+    /* Full width */
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 100%;
+    /* Full width */
+    width: 100%;
+    margin: 50px auto;
+    padding: 0 50px 0 160px;
+    /* Added right padding for balance */
+    /* Space for dates on the left */
+}
+
+/* ... existing code ... */
+
+/* Content List Styles */
+.timeline-content ul {
+    padding-left: 5px;
+    /* Reduced padding since we are using custom bullets */
+    margin: 0;
+    list-style: none;
+    /* Remove default bullets */
+}
+
+.timeline-content p {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+.timeline-content ul li {
+    position: relative;
+    padding-left: 20px;
+    /* Space for custom bullet */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    /* Slightly more spacing */
+    color: #eee;
+}
+
+/* Custom Cyan Bullet */
+.timeline-content ul li::before {
+    content: '■';
+    /* Square bullet, or use '' and styled box */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    /* Align with text */
+    color: #00ffff;
+    /* Cyan */
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+/* Gradient Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    /* Line position */
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00ffff, #0055ff, #1a1a1a);
+    /* Storyline gradient */
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    opacity: 0;
+    /* Hidden initially for scroll animation */
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+    z-index: 2;
+    /* Ensure items layer above the timeline line */
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Date on the Left Sidebar */
+.timeline-date {
+    position: absolute;
+    left: -160px;
+    top: 20px;
+    width: 110px;
+    text-align: right;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+/* Dynamic Marker (Node) */
+.timeline-marker {
+    position: absolute;
+    left: -46px;
+    /* Centered on the line (-40px center approx) */
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    background-color: #00ffff;
+    /* Solid Cyan - Fused with line */
+    transform: rotate(45deg);
+    /* Diamond Shape */
+    z-index: 5;
+    /* Ensure it is visually ON TOP of the line (which is z-index 1) */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    background-color: #fff;
+    /* White hot center on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 1);
+    transform: rotate(45deg) scale(1.3);
+}
+
+/* Marker Connecting Line Animation */
+.timeline-item.visible .timeline-marker::after {
+    /* We don't need a pseudo-element on the marker itself for the line, 
+       because rotating the marker rotates the line if attached to it.
+       Better to attach the connecting line to the item or handle it differently.
+       However, the previous implementation attached it to ::after of marker.
+       Let's keep it but counter-rotate or attach to .timeline-item.
+    */
+    content: '';
+    position: absolute;
+    right: -35px;
+    /* Extend out from the diamond */
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: linear-gradient(to right, #00ffff, rgba(0, 255, 255, 0));
+    transform: translateY(-50%) rotate(-45deg);
+    /* Counter rotate to be horizontal */
+    transform-origin: left;
+    opacity: 0;
+    animation: fadeInLine 0.5s 0.3s forwards;
+}
+
+@keyframes fadeInLine {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Remove old dot styles */
+.timeline-item::before {
+    display: none;
+}
+
+.timeline-item:nth-child(even)::before {
+    display: none;
+}
+
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline Header Styles */
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-info img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.company-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.meta-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.meta-info .location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-info .location img {
+    width: 20px;
+    height: auto;
+}
+
+.meta-info .date {
+    color: #00ffff;
+}
+
+/* Content List Styles */
+/* Content List Styles */
+.timeline-content ul {
+    padding-left: 5px;
+    margin: 0;
+    list-style: none;
+}
+
+.timeline-content p {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+.timeline-content ul li {
+    position: relative;
+    padding-left: 25px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #eee;
+}
+
+.timeline-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+    transform: rotate(45deg);
+    /* Diamond shape */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meta-info {
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+}
+
+/* Projects & Skills Common Styles */
+.skills-container {
+    max-width: 100%;
+    /* Full width */
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.category {
+    margin-top: 40px;
+}
+
+.category h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.skill {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 10px;
+    animation: slideIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Projects Specific Skill Styles */
+.projects-page .skill {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projects-page .skill span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ffff;
+}
+
+.projects-page .skill p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+/* Skills Specific Skill Styles */
+.skills-page .skill {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+}
+
+.skills-page .skill img {
+    width: 40px;
+    height: 40px;
+}
+
+.skills-page .skill span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
