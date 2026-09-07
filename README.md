@@ -33,7 +33,7 @@ The project follows a clean, component-based structure:
 ## How to View
 
 1.  Clone this repository or download the source code.
-2.  Open `index.html` in any modern web browser.
+2.  Open `https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/` in any modern web browser.
 3.  Navigate through the menu links to explore different sections.
 
 ## Technologies Used
@@ -46,4 +46,5 @@ The project follows a clean, component-based structure:
 
 **Mohamed Daoud**
 - Electrical Engineer | Tech Innovator
+- [Portfolio](https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/)
 - [LinkedIn Profile](https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urnlipaged_flagship3_profile_self_edit_top_cardPCYPgheNS1m2FlTsxC4N7A)
