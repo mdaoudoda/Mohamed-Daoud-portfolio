@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ==========================================================================
+       1. Global Print Color Preservation and Page Setup Restorations
+       ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* Forces modern print drivers to print CSS background fills instead of dropping color */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #000000;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+
+        .weight-normal {
+            font-weight: normal;
+        }
+
+        /* ==========================================================================
+       2. Standard A4 Canvas Definition Dimensions
+       ========================================================================== */
+        .page-canvas {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            /* Locks exact multi-column dimensions */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* ==========================================================================
+       3. Column Structure Wrappers
+       ========================================================================== */
+        .sidebar-pane {
+            background-color: #ffffff;
+            /* Main sidebar background switched to crisp white */
+            border-right: 0px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content-pane {
+            background-color: #ffffff;
+            padding: 25px 25px 25px 30px;
+            overflow-y: hidden;
+        }
+
+        /* ==========================================================================
+       4. Left Sidebar Components
+       ========================================================================== */
+        /* Applied a strict 1cm white margin baseline pushing the entire block away from the page edge */
+        .navy-sidebar-cell,
+        .sidebar-pane,
+        .sidebar-wrapper {
+            padding-left: 0.5cm !important;
+            background-color: #ffffff !important;
+            /* Ensures the absolute left margin space stays crisp white */
+        }
+
+        /* Dynamic Dark Blue Badge Wrapper Header Box */
+        .navy-profile-badge {
+            background-color: #071d41 !important;
+            /* Preserved color element matching design layout */
+            color: #ffffff;
+            padding: 0px 20px;
+            /* Kept exact padding properties */
+            text-align: center;
+            /* Maintained original centered text layout intent */
+        }
+
+        /* Optimized Proportional Snapshot Image Matrix Styles */
+        .avatar-wrapper {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 7px auto;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .navy-profile-badge h1 {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .navy-profile-badge .subtitle {
+            font-size: 12.5px;
+            font-weight: bold;
+            color: #cbd5e1;
+            margin-bottom: 17px;
+        }
+
+        .navy-profile-badge .dob-text {
+            font-size: 12.5px;
+            font-weight: bold;
+            color: #cbd5e1;
+            text-align: left;
+            margin-left: 2px;
+            margin-bottom: -17px;
+            margin-top: 35px;
+
+        }
+
+        /* Sidebar Base Text Padding Modules (Sitting over White Background Canvas) */
+        .sidebar-inner-content {
+            padding: 17px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-section {
+            display: block;
+        }
+
+        .sidebar-header-title {
+            font-size: 11.5px;
+            font-weight: bold;
+            color: #071d41;
+            /* Text color altered to deep blue contrast */
+            text-transform: uppercase;
+            border-bottom: 2px solid #071d41;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-details-list li {
+            margin-bottom: 17px;
+            font-size: 11px;
+            color: #dad8d8;
+            text-align: left;
+            margin-left: 10px;
+            /* Restored original offset alignment matching your layout */
+            font-weight: bold;
+        }
+
+        .contact-details-list a {
+            color: #dad8d8;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: left;
+
+        }
+
+        .contact-details-list a:hover {
+            text-decoration: underline;
+        }
+
+        .dev-tools-list li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 11px;
+            color: #333333;
+        }
+
+        .dev-tools-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #071d41;
+        }
+
+        .language-entry-row {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-label-text {
+            width: 65px;
+            color: #333333;
+        }
+
+        .language-label-text::before {
+            content: "✓ ";
+            font-weight: bold;
+            color: #071d41;
+        }
+
+        .progress-bar-track {
+            flex-grow: 1;
+            background: #e2e8f0;
+            height: 5px;
+        }
+
+        .progress-bar-thumb {
+            background: #071d41 !important;
+            /* Preserves language proficiency gauge fill blocks coloring details */
+            height: 100%;
+        }
+
+        .academic-project-card {
+            margin-bottom: 10px;
+        }
+
+        .academic-project-card h3 {
+            font-weight: bold;
+            font-size: 10.5px;
+            color: #000000;
+        }
+
+        .academic-project-card p {
+            color: #555555;
+            font-size: 9.5px;
+            margin-top: 1px;
+        }
+
+
+        /* ==========================================================================
+       5. Right Main Feed Body Styling Components
+       ========================================================================== */
+        .section-block-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #071d41;
+            text-transform: uppercase;
+            border-bottom: 2px solid #071d41;
+            padding-bottom: 2px;
+            margin-bottom: 12px;
+        }
+
+        .content-section-gap {
+            margin-bottom: 20px;
+        }
+
+        .edu-entry-card {
+            margin-bottom: 12px;
+        }
+
+        .edu-title-line {
+            font-weight: bold;
+            font-size: 11.5px;
+            color: #000000;
+        }
+
+        .edu-university-line {
+            font-style: italic;
+            font-weight: bold;
+            color: #444444;
+            margin-top: 1px;
+            font-size: 10px;
+
+        }
+
+        .edu-meta-table {
+            width: 100%;
+            margin-top: 1px;
+            font-size: 10px;
+            color: #666666;
+        }
+
+        .work-entry-card {
+            margin-bottom: 16px;
+            font-size: 10px;
+
+        }
+
+        .work-title-line {
+            font-size: 11.5px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .work-meta-table {
+            width: 100%;
+            margin-top: 2px;
+            margin-bottom: 5px;
+            font-size: 10px;
+            color: #666666;
+        }
+
+        .work-context-highlight {
+            font-style: italic;
+            margin-bottom: 5px;
+            padding: 5px 7px;
+            background-color: #f8f9fa;
+            border-left: 2px solid #071d41;
+            text-align: justify;
+            font-size: 10.5px;
+            color: #444444;
+        }
+
+        .work-bullet-tree {
+            list-style-type: square;
+            padding-left: 15px;
+        }
+
+        .work-bullet-tree li {
+            margin-bottom: 3.5px;
+            text-align: justify;
+            color: #222222;
+        }
+
+        /* --- New Additions for Working Geo-Card Structure --- */
+        .company-badge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        .company-identity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .company-name-text {
+            font-size: 11.5px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .company-role-text {
+            font-size: 10.5px;
+            font-style: italic;
+            font-weight: bold;
+            color: #444444;
+            margin-top: 1px;
+        }
+
+        .company-tenure-location {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+            text-align: right;
+            font-size: 10px;
+            color: #666666;
+        }
+
+        .company-tenure {
+            font-weight: normal;
+        }
+
+        .company-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .company-location img {
+            width: 14px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            border: 0.5px solid #d1d5db;
+            border-radius: 1px;
+        }
+
+        /* ==========================================================================
+       6. Strict System Print Optimization Core Engine Rule sets
+       ========================================================================== */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .page-canvas {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Precision Dimension Bound Page Box Wrapper Canvas Layout Container -->
+    <div class="page-canvas">
+        <!-- LEFT SIDEBAR PANEL SECTION -->
+        <aside class="sidebar-pane">
+            <div class="navy-profile-badge">
+                <div class="avatar-wrapper">
+                    <img src="assets/img/mohamed-daoud.jpg" alt="Mohamed Daoud">
+                </div>
+                <h1>Mohamed Daoud</h1>
+                <div class="subtitle">M.Sc. in Electrical Engineering & Sustainable Development</div>
+                <div class="dob-text">Contact</div>
+                <!-- Contact Block Component Area -->
+                <div class="sidebar-section">
+                    <h2 class="sidebar-header-title">CONTACT</h2>
+                    <ul class="contact-details-list">
+                        <li>📞 +20 15 543 66309 </li>
+                        <li>📍 Cairo - EGYPT</li>
+                        <li>✉️ <a href="mailto:Med.hossam.elsayed@gmail.com">Med.hossam.elsayed@gmail.com</a></li>
+                        <li>🔗 <a href="https://www.linkedin.com/in/mohamed-daoud-engineer/" target="_blank">Mohamed
+                                Daoud</a></li>
+                        <li>💼 <a href="https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/">My Portfolio</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Lower White Panel Sidebar Fields Inner Container wrapper -->
+            <div class="sidebar-inner-content">
+
+                <!-- Languages proficiency tag items container markup block -->
+                <div class="sidebar-section">
+                    <h2 class="sidebar-header-title">Languages</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        <span
+                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                            Français <span style="font-weight: normal; color: #64748b;">(C1)</span>
+                        </span>
+                        <span
+                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                            English <span style="font-weight: normal; color: #64748b;">(B2)</span>
+                        </span>
+                        <span
+                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                            Arabic <span style="font-weight: normal; color: #64748b;">(C2 - Native)</span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- Programming list categories elements code -->
+                <div class="sidebar-section">
+                    <h2 class="sidebar-header-title">Technical Skills</h2>
+                    <div style="display: flex; flex-direction: column; gap: 9px;">
+
+                        <!-- Category Group 1 -->
+                        <div>
+                            <div
+                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                Programming & Automation</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Python</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">C
+                                    / C++</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">VHDL</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Web
+                                    (HTML5/CSS3)</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Embedded
+                                    (ESP32/Arduino)</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">FPGA
+                                    / DSP / PIC</span>
+                            </div>
+                        </div>
+
+                        <!-- Category Group 2 -->
+                        <div>
+                            <div
+                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                MBD, FEA & CAD Design</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MATLAB
+                                    / Simulink</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Modelica</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LabVIEW</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">JMAG
+                                    / FEMM</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">COMSOL
+                                    / Ansys</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">HEEDS
+                                    Optimization</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SOLIDWORKS</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">CATIA
+                                    / AutoCAD</span>
+                            </div>
+                        </div>
+
+                        <!-- Category Group 3 (Requested Split) -->
+                        <div>
+                            <div
+                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                Power Electronics & PCB</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSIM</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LTspice</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSpice</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Altium
+                                    Designer</span>
+                            </div>
+                        </div>
+
+                        <!-- Category Group 4 (Requested Split) -->
+                        <div>
+                            <div
+                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                System Engineering</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">IBM
+                                    DOORS</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Siemens
+                                    Polarion</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Jira
+                                    / Confluence</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">A-SPICE</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">ISO
+                                    26262</span>
+                            </div>
+                        </div>
+
+                        <!-- Category Group 5 -->
+                        <div>
+                            <div
+                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                IT, Operations & Management</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Active
+                                    Directory</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SAP
+                                    ERP/CRM</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Microsoft
+                                    365</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Git
+                                    / GitHub</span>
+                                <span
+                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MS
+                                    Project</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+        <!-- RIGHT MAIN INFORMATION FEED PANEL BODY SECTION -->
+        <main class="main-content-pane">
+
+            <!-- Academic Background Section Module -->
+            <div class="content-section-gap">
+                <h2 class="section-block-title">Education</h2>
+
+                <div class="edu-entry-card">
+                    <div class="edu-title-line">Master of Science in Engineering: <span class="weight-normal">Electrical
+                            Engineering & sustainable development</span></div>
+                    <div class="edu-university-line">Université de Lille, école centrale Lille, école Arts et Métiers &
+                        L2EP laboratory</div>
+
+                    <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>2018 – 2020</td>
+                            <td align="right"><span class="company-location"><img src="https://flagcdn.com/fr.svg"
+                                        alt="FR">Lille, France</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="edu-entry-card" style="margin-top:14px;">
+                    <div class="edu-title-line">Bachelor of Science in Engineering: <span
+                            class="weight-normal">Electrical Engineering</span></div>
+                    <div class="edu-university-line">Université de Lille - sciences et technologie</div>
+                    <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>Major: Electronics, Electrical Energy and Control (EEA) | 2014 – 2018</td>
+                            <td align="right"><span class="company-location"><img src="https://flagcdn.com/fr.svg"
+                                        alt="FR">Lille, France</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Career Employment Records Block Section -->
+            <div>
+                <h2 class="section-block-title">Professional Experience</h2>
+
+                <!-- Position item block cards 1: Sonnen -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/Sonnen Logo.png" alt="Sonnen"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>Senior System Engineer: Sonnen GmbH</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">December 2025 –
+                                Present</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> New
+                                    Cairo, Egypt</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>MBSE:</strong> Developed modular Multi-Physical simulation models for diverse
+                            residential battery storage System architectures: Battery modules, hybrid inverters, grid
+                            variants and PV systems for DC-coupled or AC-coupled retrofit designs.</li>
+                        <li><strong>Simulation Platform:</strong> Developed simulation platform with Model Exchange &
+                            cosimulation environments using FMI framework with single/multirate, adaptive/fixed-step
+                            configurations and implicit/explicit solvers</li>
+                        <li><strong>Hardware Validation & SIL/HIL Testing:</strong> Initiated validated multi-node
+                            battery and inverter model libraries, benchmarks, and model wrappers prepared for SIL/HIL
+                            loops, directly validating topologies against physical experimental test-bench data.</li>
+                    </ul>
+                </div>
+
+                <!-- Position item block cards 2: Capgemini -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/Capgemini.png" alt="Capgemini"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>Senior Analyst: Capgemini</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">December 2024 –
+                                December 2025</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> New
+                                    Cairo, Egypt</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>Infrastructure Engineering &amp; Incident Leadership:</strong> Technical Lead
+                            delivering proactive IT infrastructure support and cross-team escalation handling for BAYER
+                            Crop Science, orchestrating strategic endpoint, network, and cloud maintenance to secure and
+                            optimize enterprise operations.</li>
+                    </ul>
+                </div>
+
+                <!-- Position item block cards 3: T&S -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/T&S Logo.png" alt="Technology & Strategy"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>System Engineer: Technology & Strategy (T&S)</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2024 –
+                                March 2024</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Lyon,
+                                    France</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>ASPICE Traceability:</strong> Managed full requirement traceability loops and
+                            controlled change verification workflows under automotive guidelines.</li>
+                        <li><strong>Functional Safety:</strong> Designed robust HW/SW system specifications aligned with
+                            safety objectives & Functional Safety under ISO 26262.</li>
+                    </ul>
+                </div>
+
+                <!-- Position item block cards 4: Valeo -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/Valeo.png" alt="Valeo"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>System Engineer: Valeo</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2022 –
+                                January 2024</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
+                                    Egypt</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>Automotive V-Model Execution:</strong> Authored system element specs following
+                            strict A-SPICE guidelines and customer requirements.</li>
+                        <li><strong>Cross-Functional Review:</strong> Led design reviews with implementation and testing
+                            teams while owning risk and issue tracking.</li>
+                        <li><strong>EV Powertrain Projects:</strong> Coordinated deliverables for 48V Belt Starter
+                            Generator (iBSG) and 800V Silicon Carbide (SiC) Inverters.</li>
+                    </ul>
+                </div>
+
+                <!-- Position item block cards 5: IBM -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/IBM.png" alt="IBM"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>Hardware Support Engineer: International Business Machines (IBM)</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">June 2021 – March
+                                2022</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
+                                    Egypt</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>Enterprise Server Diagnostics:</strong> Ran advanced hardware troubleshooting on
+                            enterprise IBM/Lenovo System X and ThinkSystem lines.</li>
+                        <li><strong>Infrastructure Deployment:</strong> Managed complex machine installations, network
+                            configurations, and firmware lifecycle packages & Formulated immediate hardware action plans
+                            as the primary technical point-of-contact for corporates IT Admin.</li>
+                    </ul>
+                </div>
+
+                <!-- Position item block cards 6: FACT Group -->
+                <div class="work-entry-card">
+                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/img/FACT.png" alt="FACT Group"
+                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                        <span>Electrical Design Engineer: Fluid Actuation & Control Toulouse (FACT Group)</span>
+                    </div>
+                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                        <tr>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2020 –
+                                October 2020</td>
+                            <td align="right" valign="middle"
+                                style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Toulouse,
+                                    France</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="work-bullet-tree">
+                        <li><strong>Clean Sky project electrical valve design:</strong> Modeled and sized an innovative
+                            electric linear actuator &
+                            Implemented strict mechanical/electrical boundary constraints to satisfy rigorous aviation
+                            safety standards.</li>
+                        <li><strong>Multi-Variable Optimization:</strong> Executed parametric optimization loops in
+                            HEEDS to minimize total aircraft valve system weight.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
