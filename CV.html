@@ -440,6 +440,49 @@
                 page-break-after: always;
             }
         }
+
+        /* Compact layout spacing so all existing CV content fits one A4 page. */
+        .main-content-pane {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .section-block-title {
+            margin-bottom: 8px;
+        }
+
+        .content-section-gap {
+            margin-bottom: 12px;
+        }
+
+        .edu-entry-card {
+            margin-bottom: 7px;
+        }
+
+        .edu-entry-card + .edu-entry-card {
+            margin-top: 6px !important;
+        }
+
+        .work-entry-card {
+            margin-bottom: 7px;
+            line-height: 1.2;
+        }
+
+        .work-bullet-tree li {
+            margin-bottom: 1px;
+            line-height: 1.2;
+        }
+
+        .company-badge-header {
+            margin-bottom: 3px;
+        }
+
+        @media print {
+            .page-canvas {
+                page-break-after: avoid !important;
+                break-after: avoid-page !important;
+            }
+        }
     </style>
 </head>
 
@@ -675,7 +718,7 @@
                     <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
                         style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
                         <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">December 2025 –
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2025 –
                                 Present</td>
                             <td align="right" valign="middle"
                                 style="font-size: 10px; color: #666666; white-space: nowrap;">
@@ -684,72 +727,14 @@
                             </td>
                         </tr>
                     </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>MBSE:</strong> Developed modular Multi-Physical simulation models for diverse
-                            residential battery storage System architectures: Battery modules, hybrid inverters, grid
-                            variants and PV systems for DC-coupled or AC-coupled retrofit designs.</li>
-                        <li><strong>Simulation Platform:</strong> Developed simulation platform with Model Exchange &
-                            cosimulation environments using FMI framework with single/multirate, adaptive/fixed-step
-                            configurations and implicit/explicit solvers</li>
-                        <li><strong>Hardware Validation & SIL/HIL Testing:</strong> Initiated validated multi-node
-                            battery and inverter model libraries, benchmarks, and model wrappers prepared for SIL/HIL
-                            loops, directly validating topologies against physical experimental test-bench data.</li>
-                    </ul>
+<ul class="work-bullet-tree">
+    <li><strong>Yukon US Project & VPP Simulation Platform:</strong> Spearheaded MBSE deployment for the Yukon US project to integrate Virtual Power Plant (VPP) and Energy Management System (EMS) features, engineering a modular, multi-physical FMI simulation platform utilizing single/multirate execution, adaptive/fixed-step setups, and implicit/explicit solvers.</li>
+    <li><strong>Inverter Topologies & Battery BMS Modeling:</strong> Modeled complex hybrid inverter structures, AC/DC-coupled retrofit architectures, and high-fidelity electrical/thermal battery models, designing precharge circuits and Battery Management System (BMS) safety control loops to control transient inrush currents.</li>
+    <li><strong>SIL/HIL Validation & Experimental Benchmarking:</strong> Formulated validated multi-node battery and inverter model libraries, benchmarks, and model wrappers optimized for SIL/HIL deployment, directly validating simulation topologies against physical, experimental test-bench data to maximize solar self-consumption and maximize efficiency.</li>
+</ul>
+
                 </div>
 
-                <!-- Position item block cards 2: Capgemini -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/Capgemini.png" alt="Capgemini"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>Senior Analyst: Capgemini</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">December 2024 –
-                                December 2025</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> New
-                                    Cairo, Egypt</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>Infrastructure Engineering &amp; Incident Leadership:</strong> Technical Lead
-                            delivering proactive IT infrastructure support and cross-team escalation handling for BAYER
-                            Crop Science, orchestrating strategic endpoint, network, and cloud maintenance to secure and
-                            optimize enterprise operations.</li>
-                    </ul>
-                </div>
-
-                <!-- Position item block cards 3: T&S -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/T&S Logo.png" alt="Technology & Strategy"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>System Engineer: Technology & Strategy (T&S)</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2024 –
-                                March 2024</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Lyon,
-                                    France</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>ASPICE Traceability:</strong> Managed full requirement traceability loops and
-                            controlled change verification workflows under automotive guidelines.</li>
-                        <li><strong>Functional Safety:</strong> Designed robust HW/SW system specifications aligned with
-                            safety objectives & Functional Safety under ISO 26262.</li>
-                    </ul>
-                </div>
 
                 <!-- Position item block cards 4: Valeo -->
                 <div class="work-entry-card">
@@ -762,7 +747,7 @@
                         style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
                         <tr>
                             <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2022 –
-                                January 2024</td>
+                                December 2024</td>
                             <td align="right" valign="middle"
                                 style="font-size: 10px; color: #666666; white-space: nowrap;">
                                 <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
@@ -770,14 +755,12 @@
                             </td>
                         </tr>
                     </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>Automotive V-Model Execution:</strong> Authored system element specs following
-                            strict A-SPICE guidelines and customer requirements.</li>
-                        <li><strong>Cross-Functional Review:</strong> Led design reviews with implementation and testing
-                            teams while owning risk and issue tracking.</li>
-                        <li><strong>EV Powertrain Projects:</strong> Coordinated deliverables for 48V Belt Starter
-                            Generator (iBSG) and 800V Silicon Carbide (SiC) Inverters.</li>
-                    </ul>
+<ul class="work-bullet-tree">
+    <li><strong>A-SPICE & V-Model System Engineering:</strong> Authored system and system-element requirements specifications (SYS.1/SYS.2/SYS.3) following strict A-SPICE guidelines, managing functional analysis, stakeholder requirement elicitation, and end-to-end traceability using IBM DOORS and Polarion.</li>
+    <li><strong>EV Powertrain & OBD Architecture:</strong> Coordinated deliverables for a 48V Belt Starter Generator (iBSG) and an 800V High-Voltage Silicon Carbide (SiC) Inverter, specifying core architectures for state machines, safe-state management, On-Board Diagnostics (OBD), and multi-variable estimators (AC voltage, DC link temperature, and current derating).</li>
+    <li><strong>Cross-Functional Review & Test Validation:</strong> Led strict technical design reviews with implementation and testing functions in a MATLAB/Simulink/TargetLink environment, refining fault state matrices (FSM) and analyzing Vector CANoe test results to resolve system anomalies while tracking risks and project budgets.</li>
+</ul>
+
                 </div>
 
                 <!-- Position item block cards 5: IBM -->
@@ -785,13 +768,12 @@
                     <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
                         <img src="assets/img/IBM.png" alt="IBM"
                             style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>Hardware Support Engineer: International Business Machines (IBM)</span>
+                        <span>Hardware Engineer: International Business Machines (IBM)</span>
                     </div>
                     <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
                         style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
                         <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">June 2021 – March
-                                2022</td>
+                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2021 – March 2022</td>
                             <td align="right" valign="middle"
                                 style="font-size: 10px; color: #666666; white-space: nowrap;">
                                 <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
@@ -799,13 +781,12 @@
                             </td>
                         </tr>
                     </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>Enterprise Server Diagnostics:</strong> Ran advanced hardware troubleshooting on
-                            enterprise IBM/Lenovo System X and ThinkSystem lines.</li>
-                        <li><strong>Infrastructure Deployment:</strong> Managed complex machine installations, network
-                            configurations, and firmware lifecycle packages & Formulated immediate hardware action plans
-                            as the primary technical point-of-contact for corporates IT Admin.</li>
-                    </ul>
+<ul class="work-bullet-tree">
+    <li><strong>Enterprise Hardware & Architecture Diagnostics:</strong> Performed component-level hardware problem determination and architecture diagnostics for IBM and Lenovo systems, including low-end/high-end servers (System x, ThinkServer, ThinkSystem), SAN/NAS storage bays, network switches, and UPS systems.</li>
+    <li><strong>Component-Level & Firmware Resolution:</strong> Isolated faults down to component-level and firmware root-causes across processors, RAID controllers, and various DDR RAM models, creating action plans and recommending improvements for hardware/firmware maintenance packages.</li>
+    <li><strong>EMEA Account Management & Deployment:</strong> Acted as the dedicated technical interface for major enterprise clients across the EMEA region, providing expert machine installation, network configuration support, and case documentation to optimize system uptime and drive client satisfaction.</li>
+</ul>
+
                 </div>
 
                 <!-- Position item block cards 6: FACT Group -->
@@ -819,7 +800,7 @@
                         style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
                         <tr>
                             <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2020 –
-                                October 2020</td>
+                                December 2020</td>
                             <td align="right" valign="middle"
                                 style="font-size: 10px; color: #666666; white-space: nowrap;">
                                 <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Toulouse,
@@ -827,14 +808,12 @@
                             </td>
                         </tr>
                     </table>
-                    <ul class="work-bullet-tree">
-                        <li><strong>Clean Sky project electrical valve design:</strong> Modeled and sized an innovative
-                            electric linear actuator &
-                            Implemented strict mechanical/electrical boundary constraints to satisfy rigorous aviation
-                            safety standards.</li>
-                        <li><strong>Multi-Variable Optimization:</strong> Executed parametric optimization loops in
-                            HEEDS to minimize total aircraft valve system weight.</li>
-                    </ul>
+<ul class="work-bullet-tree">
+    <li><strong>Clean Sky Project Electrical Valve Design:</strong> Sized and developed an innovative high-flow, constant-pressure valve for aircraft fire suppression systems, implementing strict mechanical and electrical boundary constraints to satisfy rigorous aerospace standards.</li>
+    <li><strong>Actuator Modeling & Sizing:</strong> Conducted a comprehensive trade study of rotary and linear electric configurations, modeling the optimal linear electric actuator using SOLIDWORKS for 3D CAD and JMAG for finite element analysis (FEA).</li>
+    <li><strong>Multi-Variable Optimization:</strong> Executed parametric multi-variable optimization loops in HEEDS to systematically minimize total valve system weight while maintaining peak performance metrics.</li>
+</ul>
+
                 </div>
 
                 <!-- Position item block cards 7: L2EP Laboratory Classic Layout -->
@@ -858,13 +837,13 @@
                         </tr>
                     </table>
 
-                    <ul class="work-bullet-tree">
-                        <li><strong>3MW Wind Turbine Power system design and control:</strong> In collaboration with
-                            L2EP power systems team, I contributed to the optimized design of a mechanical/electrical
-                            power
-                            conversion stages focusing on power electronics design and DFIM/PMSG control strategies,
-                            enhancing overall system efficiency.</li>
-                    </ul>
+                        <ul class="work-bullet-tree">
+                            <li><strong>3MW Wind Turbine Power System Design:</strong> Collaborated with the L2EP team to model a 3MW variable-speed wind turbine utilizing a Doubly Fed Induction Generator (DFIM/DFIG) and implemented an Energetic Macroscopic Representation (EMR) framework in MATLAB to streamline multi-variable power analysis.</li>
+                            <li><strong>Power Electronics & Control Loop Design:</strong> Modeled a bidirectional Back-to-Back converter layout in PSIM and LTSpice using 6.5kV ABB HiPak IGBT modules, and deployed stator flux-oriented vector control with PI loops to independently decouple torque, active power, and reactive power.</li>
+                            <li><strong>Aerodynamic Optimization & Protection:</strong> Integrated a Maximum Power Point Tracking (MPPT) control algorithm to dynamically track optimal tip-speed ratios & Developed active crowbar protection schemes to safely damp rotor overcurrents during grid fault conditions.</li>
+                        </ul>
+
+
                 </div>
 
             </div>
