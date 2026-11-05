@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/presentation.css">
 </head>
 
-<body>
+<body class="fixed-slide-page skills-page">
   <div class="presentation-app">
 
     <!-- Minimalist Top Navigation Header -->
@@ -43,8 +43,8 @@
     </header>
 
     <!-- Presentation Stage (PC 16:9 / Mobile Adaptive) -->
-    <main class="presentation-stage">
-      <div class="aspect-16-9-frame">
+    <main class="presentation-stage" data-fit-canvas>
+      <div class="aspect-16-9-frame" data-fixed-canvas>
         <div class="slides-container">
 
           <!-- Slide 1 : Full Engineering Competencies & Toolchain Ecosystem -->
@@ -272,9 +272,18 @@
         </div>
       </div>
     </main>
+    <footer class="presentation-footer">
+      <button class="print-button" type="button" aria-label="Print current slide" title="Print current slide" onclick="window.print()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+          <path d="M7 14h10v7H7zM17 11h.01" />
+        </svg>
+      </button>
+    </footer>
   </div>
 
   <script src="assets/js/presentation.js"></script>
+  <script src="assets/js/canvas-fit.js"></script>
 </body>
 
 </html>

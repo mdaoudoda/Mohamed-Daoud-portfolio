@@ -1,0 +1,220 @@
+:root {
+  --navy: #0a224f;
+  --ice: #e6f0ff;
+  --border: #c8dcfc;
+  --text: #333;
+  --muted: #646464;
+  --paper: #fff;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #071630; color: var(--text); font: 15px/1.5 Arial, sans-serif; }
+.pres-header { background: var(--navy); color: var(--paper); }
+.header-brand-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px max(20px, calc((100% - 1500px) / 2)); border-bottom: 1px solid #ffffff20; }
+.brand-left { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+.brand-name { color: inherit; font-weight: 800; text-decoration: none; }
+.brand-sub, .brand-right { color: var(--ice); font-size: 13px; }
+.brand-right { text-transform: uppercase; letter-spacing: 1px; }
+.tabs-bar { display: flex; justify-content: center; gap: 8px; padding: 8px; }
+.tab-btn { padding: 8px 16px; border-radius: 4px; color: var(--ice); font-weight: 700; text-decoration: none; }
+.tab-btn:hover, .tab-btn.active { background: var(--ice); color: var(--navy); }
+.presentation-stage { padding: 24px; }
+.aspect-16-9-frame { max-width: 1500px; margin: auto; }
+.about-slide { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(220px, .9fr) repeat(2, minmax(0, 1.4fr)); grid-template-rows: auto 1fr; gap: 18px; align-items: start; padding: 20px; border-radius: 8px; background: var(--paper); }
+.slide-footer { display: flex; align-items: center; justify-content: flex-end; padding: 0 4px; }
+.print-button {
+  display: grid;
+  flex: none;
+  margin: 0;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  opacity: .65;
+  transition: opacity .2s, background .2s;
+}
+.print-button:hover, .print-button:focus-visible { background: #0a224f10; opacity: 1; }
+.print-button:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.print-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.profile-exec-card { grid-column: 1; }
+.about-interests-column { grid-column: 1; }
+.about-middle-column { grid-column: 2; grid-row: 1 / span 2; }
+.about-career-column { grid-column: 3; grid-row: 1 / span 2; }
+.about-interests-column, .about-middle-column, .about-career-column { min-width: 0; }
+.about-middle-column, .about-career-column { display: flex; flex-direction: column; gap: 16px; }
+.profile-identity-block { display: flex; align-items: center; gap: 14px; }
+.profile-photo { width: 100px; height: 100px; border: 2px solid var(--border); border-radius: 6px; object-fit: cover; }
+.profile-name-lg { color: var(--navy); font-size: 22px; }
+.profile-meta-sm { color: var(--muted); font-size: 13px; }
+.geo-card, .about-core-journey, .about-expertise-domains, .about-milestones, .about-experience-timeline, .about-education-timeline { padding: 14px; border: 1px solid #0a224f20; border-radius: 6px; background: var(--paper); }
+.geo-card { margin-top: 14px; }
+.accent-ice, .hobby { background: #f4f8ff; }
+.card-title, .about-timeline-heading { margin: 0 0 10px; color: var(--navy); font-size: 16px; }
+.hobby-grid, .world-grid, .about-domain-list, .about-photo-grid { display: grid; gap: 10px; }
+.hobby-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.hobby { padding: 10px; border-radius: 5px; }
+.hobby-title { margin-bottom: 6px; font-size: 14px; font-weight: 700; }
+.hobby ul { margin: 0; padding-left: 16px; font-size: 12px; }
+.world-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 12px; }
+.world-grid img { width: 15px; }
+.about-timeline-heading { text-transform: uppercase; }
+.journey-block + .journey-block { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+.journey-block .about-timeline-heading { margin-bottom: 6px; }
+.about-core-journey p, .about-domain-item p { margin: 6px 0 0; }
+.about-domain-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.about-domain-item { padding-left: 10px; border-left: 2px solid var(--navy); }
+.about-domain-item h3 { margin: 0; color: var(--navy); font-size: 14px; }
+.about-domain-item p, .about-timeline-item p { color: var(--muted); font-size: 13px; }
+.about-photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.about-photo-grid figure { margin: 0; text-align: center; }
+.about-photo-grid img { width: 100%; height: 120px; object-fit: contain; }
+.about-photo-grid figcaption { color: var(--muted); font-size: 12px; }
+.gallery-photo { display: block; width: 100%; padding: 0; overflow: hidden; border: 0; border-radius: 4px; background: transparent; cursor: zoom-in; }
+.gallery-photo img { display: block; transition: transform .2s ease; }
+.gallery-photo:hover img, .gallery-photo:focus-visible img { transform: scale(1.05); }
+.gallery-photo:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.photo-viewer { position: fixed; width: min(92vw, 1100px); max-width: none; max-height: 90vh; padding: 42px 12px 12px; overflow: visible; border: 1px solid #ffffff50; border-radius: 8px; background: #071630; }
+.photo-viewer::backdrop { background: #030b18e8; }
+.photo-viewer-image { display: block; max-width: 100%; max-height: calc(90vh - 56px); margin: auto; object-fit: contain; }
+.photo-viewer-close { position: absolute; top: 5px; right: 8px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: #ffffff20; color: white; font-size: 25px; line-height: 1; cursor: pointer; }
+.photo-viewer-close:hover, .photo-viewer-close:focus-visible { background: #ffffff40; }
+.about-timeline-list { display: grid; gap: 12px; margin: 0 0 0 8px; padding: 0 0 0 14px; border-left: 2px solid var(--border); list-style: none; }
+.about-timeline-item { position: relative; }
+.about-timeline-item::before { position: absolute; top: 4px; left: -20px; width: 8px; height: 8px; border-radius: 50%; background: var(--navy); content: ""; }
+.about-timeline-item time { color: var(--muted); font-size: 12px; font-weight: 700; }
+.about-timeline-item h3 { display: flex; align-items: center; gap: 7px; margin: 3px 0; color: var(--navy); font-size: 14px; }
+.about-timeline-item h3 img { width: 22px; height: 22px; object-fit: contain; }
+.about-timeline-item p { margin: 4px 0; }
+@media (max-width: 900px) {
+  .about-slide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-exec-card, .about-interests-column { grid-column: 1; }
+  .about-middle-column { grid-column: 2; grid-row: 1 / span 2; }
+  .about-career-column { grid-column: 1 / -1; grid-row: auto; }
+}
+@media (max-width: 600px) {
+  .header-brand-row { align-items: flex-start; padding: 14px 16px; }
+  .brand-left { display: grid; gap: 2px; }
+  .presentation-stage { padding: 10px; }
+  .about-slide { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+  .profile-exec-card, .about-interests-column, .about-middle-column, .about-career-column { grid-column: 1; grid-row: auto; }
+  .world-grid, .about-domain-list { grid-template-columns: 1fr; }
+}
+
+/* A fixed 1280×720 slide scales as one canvas on every screen. */
+@media screen {
+  html, body { width: 100%; height: 100%; overflow: hidden; }
+  body { min-width: 0; }
+  .presentation-app { display: flex; flex-direction: column; }
+  .presentation-app { width: 100%; height: 100vh; height: 100dvh; overflow: hidden; }
+  .pres-header { flex: none; }
+  .presentation-stage { flex: 1; display: flex; min-width: 0; min-height: 0; align-items: center; justify-content: center; padding: 0; overflow: hidden; }
+  .aspect-16-9-frame { position: relative; display: flex; flex: 1; width: 100%; height: 100%; max-width: none; max-height: none; align-items: center; justify-content: center; margin: 0; aspect-ratio: auto; overflow: hidden; }
+  .deck-section { position: relative; flex: none; width: 1280px; height: 720px; transform: scale(var(--canvas-scale, 1)); transform-origin: center; }
+  .about-slide { width: 1280px; height: 720px; }
+  .profile-exec-card { grid-column: 1; grid-row: 1; }
+  .about-interests-column { grid-column: 1; grid-row: 2; }
+  .about-middle-column { grid-column: 2; grid-row: 1 / span 2; }
+  .about-career-column { grid-column: 3; grid-row: 1 / span 2; }
+  .slide-footer { grid-column: 1 / -1; grid-row: 3; }
+  .about-slide {
+    container-type: inline-size;
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.2fr) minmax(0, 1.2fr);
+    grid-template-rows: 78px minmax(0, 1fr) 28px;
+    align-items: stretch;
+    gap: 6px;
+    overflow: hidden;
+    padding: 8px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .profile-identity-block { gap: 8px; }
+  .profile-photo { width: 62px; height: 62px; }
+  .profile-name-lg { font-size: 17px; }
+  .profile-meta-sm { font-size: 11px; }
+  .about-interests-column { display: grid; grid-template-rows: max-content max-content max-content; align-content: start; gap: 8px; overflow: hidden; }
+  .profile-identity-block { height: 100%; }
+  .about-interests-column .geo-card { min-height: 0; margin: 0; padding: 7px; overflow: hidden; }
+  .about-interests-column .geo-card:first-child { padding: 5px; }
+  .about-interests-column .geo-card:first-child .card-title { margin-bottom: 3px; }
+  .card-title, .about-timeline-heading { margin-bottom: 5px; font-size: 12px; }
+  .hobby-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .hobby { padding: 5px; }
+  .hobby-title { margin-bottom: 2px; font-size: 11px; }
+  .hobby ul { padding-left: 13px; font-size: 10px; line-height: 1.05; }
+  .world-grid { gap: 4px 6px; font-size: 10px; line-height: 1.05; }
+  .world-grid img { width: 12px; }
+  .about-middle-column { display: grid; grid-template-rows: 1fr 1.02fr; gap: 6px; overflow: hidden; }
+  .about-core-journey, .about-expertise-domains, .about-milestones { min-height: 0; padding: 8px; overflow: hidden; }
+  .journey-block + .journey-block { margin-top: 9px; padding-top: 7px; }
+  .journey-block .about-timeline-heading { margin-bottom: 4px; }
+  .about-core-journey p, .about-domain-item p { margin-top: 3px; font-size: 11px; line-height: 1.2; }
+  .about-domain-list { gap: 5px; }
+  .about-domain-item { padding-left: 6px; }
+  .about-domain-item h3 { font-size: 11px; line-height: 1.15; }
+  .about-photo-grid { gap: 5px; margin-top: 4px; }
+  .about-photo-grid img { height: 54px; }
+  .about-photo-grid figcaption { font-size: 10px; }
+  .about-career-column { display: grid; grid-template-rows: minmax(0, .85fr) minmax(0, 1.15fr); gap: 6px; overflow: hidden; }
+  .slide-footer { grid-column: 1 / -1; grid-row: 3; }
+  .about-experience-timeline { display: flex; flex-direction: column; min-height: 0; margin: 0; padding: 8px; overflow: hidden; }
+  .about-experience-timeline .about-timeline-heading { flex: none; }
+  .about-timeline-list { position: relative; display: grid; gap: 5px; min-height: 0; margin: 0 0 0 5px; padding: 0 0 0 14px; border: 0; }
+  .about-timeline-list::before { position: absolute; inset: 4px auto 4px 5px; width: 2px; background: var(--border); content: ""; }
+  .about-timeline-item { min-width: 0; padding: 0 0 2px; }
+  .about-timeline-item::before { top: 3px; left: -13px; width: 8px; height: 8px; border: 2px solid var(--paper); background: var(--navy); box-shadow: 0 0 0 1px var(--border); }
+  .about-timeline-item time { display: inline-block; padding: 2px 5px; border-radius: 3px; background: #f4f8ff; color: var(--navy); font-size: 10.5px; line-height: 1.1; }
+  .about-timeline-item h3 { gap: 5px; margin: 2px 0 0; font-size: 11px; line-height: 1.15; }
+  .about-timeline-item h3 img { width: 17px; height: 17px; }
+  .about-experience-timeline .experience-list { display: flex; flex: 1; flex-direction: column; justify-content: space-between; gap: 4px; }
+  .about-education-timeline { display: flex; flex-direction: column; min-height: 0; margin: 0; padding: 7px; overflow: hidden; }
+  .about-education-timeline .about-timeline-heading { flex: none; }
+  .about-education-timeline .about-timeline-list { display: flex; flex: 1; flex-direction: column; justify-content: space-between; gap: 8px; }
+  .about-education-timeline .about-timeline-item { padding-bottom: 4px; }
+  .about-education-timeline .about-timeline-item h3 { font-size: 11.5px; }
+  .about-education-timeline .about-timeline-item p { margin: 2px 0 0; font-size: 11.5px; line-height: 1.15; }
+}
+
+/* Print as one widescreen PowerPoint-sized page. */
+@page { size: 13.333333in 7.5in; margin: 0; }
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .photo-viewer { display: none !important; }
+  html, body, .presentation-app { width: 1280px !important; height: 720px !important; min-width: 1280px !important; max-width: 1280px !important; margin: 0 !important; overflow: hidden !important; }
+  .pres-header { display: none !important; }
+  .presentation-app, .presentation-stage { display: block !important; padding: 0 !important; }
+  .aspect-16-9-frame { position: relative !important; display: block !important; width: 1280px !important; height: 720px !important; min-width: 1280px !important; max-width: 1280px !important; max-height: 720px !important; margin: 0 !important; aspect-ratio: auto !important; overflow: hidden !important; }
+  .deck-section, .about-slide { position: relative !important; width: 1280px !important; height: 720px !important; min-width: 1280px !important; max-width: 1280px !important; max-height: 720px !important; margin: 0 !important; aspect-ratio: auto !important; overflow: hidden !important; transform: none !important; }
+  .aspect-16-9-frame { border-radius: 0 !important; box-shadow: none !important; }
+  .about-slide { display: grid !important; grid-template-columns: minmax(0, .82fr) minmax(0, 1.2fr) minmax(0, 1.2fr) !important; grid-template-rows: 78px minmax(0, 1fr) 28px !important; gap: 6px !important; padding: 8px !important; border-radius: 0 !important; font-size: 11px !important; line-height: 1.25 !important; }
+  .about-slide { container-type: inline-size !important; align-items: stretch !important; }
+  .profile-exec-card { grid-column: 1 !important; grid-row: 1 !important; }
+  .about-interests-column { display: grid !important; grid-column: 1 !important; grid-row: 2 !important; grid-template-rows: max-content max-content max-content !important; align-content: start !important; gap: 8px !important; overflow: hidden !important; }
+  .about-middle-column { display: grid !important; grid-column: 2 !important; grid-row: 1 / span 2 !important; grid-template-rows: 1fr 1.02fr !important; gap: 6px !important; overflow: hidden !important; }
+  .about-career-column { display: grid !important; grid-column: 3 !important; grid-row: 1 / span 2 !important; grid-template-rows: minmax(0, .85fr) minmax(0, 1.15fr) !important; gap: 6px !important; overflow: hidden !important; }
+  .about-interests-column .geo-card { min-height: 0 !important; margin: 0 !important; padding: 7px !important; overflow: hidden !important; }
+  .about-interests-column .geo-card:first-child { padding: 5px !important; }
+  .about-interests-column .geo-card:first-child .card-title { margin-bottom: 3px !important; }
+  .profile-exec-card { align-self: stretch !important; height: 78px !important; margin-bottom: 0 !important; }
+  .profile-identity-block { height: 100% !important; }
+  .hobby-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 4px !important; }
+  .hobby { padding: 5px !important; }
+  .about-timeline-heading, .card-title { margin-bottom: 5px !important; font-size: 12px !important; }
+  .about-photo-grid img { height: 54px !important; }
+  .slide-footer { grid-column: 1 / -1 !important; grid-row: 3 !important; }
+  .about-experience-timeline .experience-list, .about-education-timeline .about-timeline-list { display: flex !important; flex-direction: column !important; }
+  .about-experience-timeline .experience-list { flex: 1 !important; justify-content: space-between !important; gap: 4px !important; }
+  .about-education-timeline .about-timeline-list { flex: 1 !important; justify-content: space-between !important; gap: 8px !important; }
+  .about-slide > * { min-width: 0 !important; min-height: 0 !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .about-core-journey p, .about-domain-item p { font-size: 11px !important; line-height: 1.2 !important; }
+  .about-timeline-item p { font-size: 11.5px !important; line-height: 1.15 !important; }
+  .journey-block + .journey-block { margin-top: 9px !important; padding-top: 7px !important; }
+  .journey-block .about-timeline-heading { margin-bottom: 4px !important; }
+  .hobby ul, .world-grid { font-size: 10px !important; line-height: 1.05 !important; }
+  .about-slide, .about-slide * { break-inside: avoid !important; page-break-inside: avoid !important; }
+  .slide-footer { display: flex !important; visibility: hidden !important; }
+  .aspect-16-9-frame { break-after: avoid !important; page-break-after: avoid !important; }
+}

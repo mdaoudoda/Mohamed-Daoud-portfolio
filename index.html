@@ -12,13 +12,13 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Daoud | Engineering Presentation</title>
+  <title>Mohamed Daoud | Portfolio</title>
   <meta name="description"
     content="High-end engineering presentation of Mohamed Daoud - Electrical Engineer specializing in Automotive Systems, ASPICE, ISO 26262, Power Electronics, Machine Design, and Aerospace Actuation.">
-  <link rel="stylesheet" href="assets/css/presentation.css">
+  <link rel="stylesheet" href="assets/css/about.css">
 </head>
 
-<body>
+<body class="about-presentation">
   <div class="presentation-app">
 
     <!-- Minimalist Top Navigation Header -->
@@ -42,152 +42,66 @@
     </header>
 
     <!-- Presentation Stage (PC 16:9 / Mobile Adaptive) -->
-    <main class="presentation-stage">
+    <main class="presentation-stage" data-fit-canvas>
       <div class="aspect-16-9-frame">
-        <div class="deck-section active" id="section-about">
+        <div class="deck-section active" id="section-about" data-fixed-canvas>
 
           <!-- Slide 1: Executive Profile & Coordinates -->
-          <article class="slide active">
-
-            <div class="slide-body">
-              <div class="split-cols-35-65">
+          <article class="slide active about-slide">
                 <div class="profile-exec-card">
-                  <div class="profile-identity-block" style="display: flex; gap: 14px; align-items: center;">
-                    <img src="assets/img/mohamed-daoud.jpg" alt="Mohamed Daoud"
-                      style="width: 170px; height: 170px; border-radius: 4px; object-fit: cover; border: 2px solid var(--ice-blue); flex-shrink: 0;">
+                  <div class="profile-identity-block">
+                    <img class="profile-photo" src="assets/img/mohamed-daoud.jpg" alt="Mohamed Daoud">
                     <div>
                       <div class="profile-name-lg"><b>Mohamed Daoud</b></div>
-                      <div class="profile-role-sub"><b>M.Sc. in Electrical Engineering & Sustainable Development</b>
-                      </div>
-                      <br>
-                      <div class="profile-role-sub"><b>B.Eng. in Electronics, Electrical Energy & Automation</b></div>
-
+                      <div class="profile-meta-sm">Born in Cairo, Egypt</div>
+                      <div class="profile-meta-sm">21 November 1996</div>
                     </div>
                   </div>
 
-                  <div class="geo-card accent-ice">
-                    <div class="card-title">Direct Contact Coordinates</div>
-                    <div class="contact-coord-list">
-                      <div class="coord-item">
-                        <span class="coord-icon-box">📍</span>
-                        <span>Cairo - EGYPT (Open for global opportunities)</span>
-                      </div>
-                      <div class="coord-item">
-                        <span class="coord-icon-box">📱</span>
-                        <span>+20 15 543 66309 (Egypt)</span>
-                      </div>
-                      <div class="coord-item">
-                        <span class="coord-icon-box">📧</span>
-                        <a href="mailto:Med.hossam.elsayed@gmail.com">Med.hossam.elsayed@gmail.com</a>
-                      </div>
-                      <div class="coord-item">
-                        <span class="coord-icon-box">in</span>
-                        <a href="https://www.linkedin.com/in/mohamed-daoud-engineer/" target="_blank">LinkedIn
-                          Profile</a>
-                      </div>
-                      <div class="coord-item">
-                        <span class="coord-icon-box">🌐</span>
-                        <a href="https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/" target="_blank">Portfolio
-                          Repository</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="geo-card">
-                    <div class="card-title">Spoken Languages Proficiency</div>
-                    <div class="language-proficiency-group">
-                      <div class="lang-row">
-                        <div class="lang-label-row"><span>Français</span><span>C1 (Fluent / Bilingual)</span></div>
-                        <div class="lang-bar-track">
-                          <div class="lang-bar-fill" style="width: 92%;"></div>
-                        </div>
-                      </div>
-                      <div class="lang-row">
-                        <div class="lang-label-row"><span>English</span><span>C1 (Full Professional)</span></div>
-                        <div class="lang-bar-track">
-                          <div class="lang-bar-fill" style="width: 90%;"></div>
-                        </div>
-                      </div>
-                      <div class="lang-row">
-                        <div class="lang-label-row"><span>Arabic</span><span>Native Tongue</span></div>
-                        <div class="lang-bar-track">
-                          <div class="lang-bar-fill" style="width: 100%;"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-                <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="about-interests-column">
 
                   <div class="geo-card">
-                    <div class="card-title">Personal Biography & Cultural Mosaic</div>
-                    <p style="font-size: 11px; color: var(--slate-dark); margin-bottom: 8px;">
-                      Born in Cairo and shaped by a mosaic of cultures, I’m an engineer who thrives where technology
-                      meets
-                      human curiosity. My journey led me from Egypt to France—where I earned degrees in Electrical
-                      Engineering and worked across both countries—immersing myself in diverse ways of thinking,
-                      building, and innovating.
-                    </p>
-                  </div>
-
-
-                  <div class="geo-card accent-ice">
-                    <div class="card-title">My Superpower & Core Philosophy</div>
-                    <p
-                      style="font-size: 11px; font-style: italic; color: var(--navy); margin-bottom: 8px; font-weight: 500;">
-                      "Adapting to any environment while staying anchored in my core: a relentless drive to learn,
-                      build,
-                      and find the humor in life’s complexities."
-                    </p>
-                  </div>
-
-                  <div class="geo-card" style="padding: 20px; font-family: system-ui, -apple-system, sans-serif;">
-                    <div class="card-title"
-                      style="font-size: 16px; font-weight: bold; margin-bottom: 16px; color: var(--slate-dark);">
-                      Hobies</div>
+                    <h2 class="card-title">Hobbies</h2>
 
                     <!-- 3-Column Grid Container -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+                    <div class="hobby-grid">
 
                       <!-- Music Column -->
-                      <div style="background: rgba(0,0,0,0.02); padding: 10px; border-radius: 8px;">
-                        <div
-                          style="font-weight: 500; color: var(--slate-dark); font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                      <div class="hobby">
+                        <div class="hobby-title">
                           <span>🎵</span> Music
                         </div>
-                        <ul
-                          style="margin: 0; padding-left: 14px; font-size: 10px; color: var(--slate-dark); line-height: 1.5;">
-                          <li style="margin-bottom: 4px;"><strong>Classical:</strong> Vivaldi, Bach, Chopin, Mozart,
+                        <ul>
+                          <li><strong>Classical:</strong> Vivaldi, Bach, Chopin, Mozart,
                             Beethoven.</li>
-                          <li style="margin-bottom: 4px;"><strong>Rock:</strong> Golden eras of 60s, 70s, and 80s.</li>
+                          <li><strong>Rock:</strong> Golden eras of 60s, 70s, and 80s.</li>
                           <li><strong>Electronic & Pop:</strong> Armin, Tiësto, Daft Punk, 90s Pop.</li>
                         </ul>
                       </div>
 
                       <!-- Sports Column -->
-                      <div style="background: rgba(0,0,0,0.02); padding: 10px; border-radius: 8px;">
-                        <div
-                          style="font-weight: 600; color: var(--slate-dark); font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                      <div class="hobby">
+                        <div class="hobby-title">
                           <span>🏊</span> Sports & Fitness
                         </div>
-                        <ul
-                          style="margin: 0; padding-left: 14px; font-size: 10px; color: var(--slate-dark); line-height: 1.5;">
-                          <li style="margin-bottom: 4px;"><strong>Aquatics:</strong> Swimming & Water Polo.</li>
-                          <li><strong>Court & Pitch:</strong> Padel & Futsal.</li>
+                        <ul>
+                          <li>Swimming</li>
+                          <li>Water Polo</li>
+                          <li>Padel</li>
+                          <li>Futsal</li>
                         </ul>
                       </div>
 
                       <!-- Games Column -->
-                      <div style="background: rgba(0,0,0,0.02); padding: 10px; border-radius: 8px;">
-                        <div
-                          style="font-weight: 600; color: var(--slate-dark); font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-                          <span>♟️</span> Mind & Strategy
+                      <div class="hobby">
+                        <div class="hobby-title">
+                          <span>♟️</span> Strategy Games
                         </div>
-                        <ul
-                          style="margin: 0; padding-left: 14px; font-size: 10px; color: var(--slate-dark); line-height: 1.5;">
-                          <li style="margin-bottom: 4px;"><strong>Tabletop:</strong> Strategic Chess.</li>
-                          <li><strong>Digital:</strong> Counter-Strike & Age of Empires.</li>
+                        <ul>
+                          <li>Chess</li>
+                          <li>Counter-Strike & Age of Empires.</li>
                         </ul>
                       </div>
 
@@ -197,205 +111,168 @@
 
 
                   <div class="geo-card accent-ice">
-                    <div class="card-title">International Mobility & Cities Explored</div>
-                    <div
-                      style="display: grid; grid-template-columns: 1fr 1fr; gap: 9px 11px; font-size: 9.5px; margin-top: 6px;">
-                      <div><strong><img src="https://flagcdn.com/fr.svg" width="15" alt="FR"> France:</strong> <span
-                          style="color: var(--slate-dark);">Paris, Lille, Rouen, Bordeaux, Lyon, Montpellier, Nîmes,
+                    <h2 class="card-title">Around the World</h2>
+                    <div class="world-grid">
+                      <div><strong><img src="https://flagcdn.com/fr.svg" alt="FR"> France:</strong> <span>Paris, Lille, Rouen, Bordeaux, Lyon, Montpellier, Nîmes,
                           Marseille, Toulouse</span></div>
-                      <div><strong><img src="https://flagcdn.com/nl.svg" width="15" alt="NL"> Netherlands:</strong>
-                        <span style="color: var(--slate-dark);">Amsterdam, Rotterdam</span>
+                      <div><strong><img src="https://flagcdn.com/nl.svg" alt="NL"> Netherlands:</strong>
+                        <span>Amsterdam, Rotterdam</span>
                       </div>
-                      <div><strong><img src="https://flagcdn.com/be.svg" width="15" alt="BE"> Belgium:</strong> <span
-                          style="color: var(--slate-dark);">Brussels, Ostende</span></div>
-                      <div><strong><img src="https://flagcdn.com/gr.svg" width="15" alt="GR"> Greece:</strong> <span
-                          style="color: var(--slate-dark);">Athens</span></div>
-                      <div><strong><img src="https://flagcdn.com/es.svg" width="15" alt="ES"> Spain:</strong> <span
-                          style="color: var(--slate-dark);">Barcelona</span></div>
-                      <div><strong><img src="https://flagcdn.com/ch.svg" width="15" alt="CH"> Switzerland:</strong>
-                        <span style="color: var(--slate-dark);">Genève</span>
+                      <div><strong><img src="https://flagcdn.com/be.svg" alt="BE"> Belgium:</strong> <span>Brussels, Ostende</span></div>
+                      <div><strong><img src="https://flagcdn.com/gr.svg" alt="GR"> Greece:</strong> <span>Athens</span></div>
+                      <div><strong><img src="https://flagcdn.com/es.svg" alt="ES"> Spain:</strong> <span>Barcelona</span></div>
+                      <div><strong><img src="https://flagcdn.com/ch.svg" alt="CH"> Switzerland:</strong>
+                        <span>Genève</span>
                       </div>
-                      <div><strong><img src="https://flagcdn.com/eg.svg" width="15" alt="EG"> Egypt:</strong> <span
-                          style="color: var(--slate-dark);">Cairo, Alexandria, North Coast, Hurghada, Suez, Siwa, South
+                      <div><strong><img src="https://flagcdn.com/eg.svg" alt="EG"> Egypt:</strong> <span>Cairo, Alexandria, North Coast, Hurghada, Suez, Siwa, South
                           Sinai</span></div>
-                      <div><strong><img src="https://flagcdn.com/sa.svg" width="15" alt="SA"> Saudi Arabia:</strong>
-                        <span style="color: var(--slate-dark);">Riyadh, Dammam, Medinah, Jeddah</span>
+                      <div><strong><img src="https://flagcdn.com/sa.svg" alt="SA"> Saudi Arabia:</strong>
+                        <span>Riyadh, Dammam, Medinah, Jeddah</span>
                       </div>
-                      <div><strong><img src="https://flagcdn.com/bh.svg" width="15" alt="BH"> Bahrain:</strong> <span
-                          style="color: var(--slate-dark);">Manama</span></div>
+                      <div><strong><img src="https://flagcdn.com/bh.svg" alt="BH"> Bahrain:</strong> <span>Manama</span></div>
                     </div>
-
 
                   </div>
-                </div>
-              </div>
-          </article>
 
-          <!-- Slide 2: Professional Journey & Multidisciplinary Edge -->
-          <article class="slide">
-            <header class="slide-header">
-              <h2 class="slide-title"> Academic & Professional Journey</h2>
-              <p class="slide-subtitle">System Engineering from Theory to applications in Aerospace, Automotive &
-                Renewable Energy </p>
-            </header>
-
-            <div class="slide-body">
-              <div class="split-cols-50-50">
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-
-                  <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div class="geo-card">
-                      <div class="company-badge-header">
-                        <div>
-                          <div class="company-name-text">Master of Science in Engineering</div>
-                          <div class="company-role-text">Electrical Engineering & Sustainable Development</div>
-                        </div>
-                        <div class="company-tenure-location">
-                          <span class="company-tenure">2018 – 2020</span>
-                          <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Lille,
-                            France</span>
-                        </div>
-                      </div>
-                      <div class="metric-box">
-                        <span class="metric-number">Rank: 5th / 22</span>
-                        <span class="metric-label">Université de Lille, Centrale Lille, Arts et Métiers & L2EP</span>
-                      </div>
-                      <ul class="geo-bullet compact">
-                        <li>Specialized in sustainable development, electrical machine design, power electronics, and
-                          advanced drive control.</li>
-                        <li><strong>Modeling & Optimization of Electrical Machines (SRM8/6 - PMSM):</strong> Finite
-                          element magnetic design, torque ripple minimization, and thermal analysis comparing Switched
-                          Reluctance Machines with PMSM.</li>
-                        <li><strong>Modeling Electric and Hybrid Vehicles (Renault Zoe - Toyota Prius):</strong>
-                          Vehicle dynamics modeling, battery energy management, powertrain simulation, and
-                          efficiency benchmarking.</li>
-                      </ul>
+                  <section class="about-milestones">
+                    <h2 class="about-timeline-heading">Gallery</h2>
+                    <div class="about-photo-grid">
+                      <figure>
+                        <button class="gallery-photo" type="button" data-full-image="assets/img/Academic_Journey.PNG" aria-label="Enlarge Academic Journey photo">
+                          <img src="assets/img/Academic_Journey.PNG" alt="Academic Journey">
+                        </button>
+                        <figcaption>Academic Journey</figcaption>
+                      </figure>
+                      <figure>
+                        <button class="gallery-photo" type="button" data-full-image="assets/img/Travelling.PNG" aria-label="Enlarge Travelling photo">
+                          <img src="assets/img/Travelling.PNG" alt="Travelling">
+                        </button>
+                        <figcaption>Travelling</figcaption>
+                      </figure>
+                      <figure>
+                        <button class="gallery-photo" type="button" data-full-image="assets/img/Work_photos.PNG" aria-label="Enlarge Work photos">
+                          <img src="assets/img/Work_photos.PNG" alt="Work photos">
+                        </button>
+                        <figcaption>Work photos</figcaption>
+                      </figure>
                     </div>
-
-                    <div class="geo-card">
-                      <div class="company-badge-header">
-                        <div>
-                          <div class="company-name-text">Bachelor of Science in Engineering</div>
-                          <div class="company-role-text">Major: Electronics, Electrical Energy and Control</div>
-                        </div>
-                        <div class="company-tenure-location">
-                          <span class="company-tenure">2014 – 2018</span>
-                          <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Lille,
-                            France</span>
-                        </div>
-                      </div>
-                      <div class="metric-box">
-                        <span class="metric-number">Rank: 23rd / 121</span>
-                        <span class="metric-label">Université de Lille – Sciences et Technologies</span>
-                      </div>
-                      <ul class="geo-bullet compact">
-                        <li>A structured progression in EEA engineering: beginning with core mathematics and physics;
-                          expanding into analog and digital electronics theory; Embedded systems programming and
-                          electromagnetic actuators Modeling & simulation; and culminating in integrated automated
-                          control
-                          and smart energy management systems.</li>
-
-                        <li><strong>BSE Graduation Project: Sizing a Smart Grid for a Passive House:</strong>
-                          Photovoltaic
-                          generation modeling, battery storage sizing, demand-response management, and energy
-                          self-sufficiency optimization.</li>
-                      </ul>
-                    </div>
-
-                    <div class="geo-card accent-ice" style="padding: 8px 14px;">
-                      <div class="company-badge-header"
-                        style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
-                        <div>
-                          <div class="company-name-text" style="font-size: 13px;">High School Diploma: Sciences &
-                            Mathematics</div>
-                          <div class="company-role-text" style="font-size: 11px;">Lycée Elhorreya de Maadi | Cairo,
-                            Egypt
-                            (2014)</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </section>
                 </div>
 
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                  <div class="geo-card">
-                    <div class="card-title">Core Engineering Journey</div>
-                    <p style="font-size: 13px; color: var(--slate-dark); margin-bottom: 8px;">
-                      My professional path is fueled by a relentless curiosity for <strong>smart systems</strong> and
-                      <strong>advanced engineering</strong>. From designing electrical machines for wind turbines to
-                      developing control systems for hybrid vehicles and aircraft, I thrive at the intersection of
-                      hardware and software.
-                    </p>
-                    <p style="font-size: 13px; color: var(--slate-dark);">
-                      Today, I leverage this diverse technical background to deliver innovative solutions that merge
-                      <strong>sustainability</strong> with <strong>high-performance engineering</strong>, bridging the
-                      gap between traditional industry and emerging smart technologies.
-                    </p>
-                  </div>
-                  <div class="geo-card">
-                    <div class="card-title">Sector Expertise Matrix</div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
-                      <div style="border-left: 3px solid var(--navy); padding-left: 10px;">
-                        <strong style="color: var(--navy); font-size: 13px;">Aerospace System Engineering</strong>
-                        <p style="font-size: 12px; color: var(--slate-dark);">Clean Sky CFP10 high flow rate valve
-                          actuator design, JMAG FEA, SOLIDWORKS 3D CAD, and HEEDS weight optimization.</p>
-                      </div>
-                      <div style="border-left: 3px solid var(--navy); padding-left: 10px;">
-                        <strong style="color: var(--navy); font-size: 13px;">Automotive Powertrain Systems</strong>
-                        <p style="font-size: 12px; color: var(--slate-dark);">High-voltage 800V SiC inverters & 48V belt
-                          starter generators (IBSG), OBD diagnostics, FSM fault matrix, ISO 26262, and ASPICE.</p>
-                      </div>
-                      <div style="border-left: 3px solid var(--navy); padding-left: 10px;">
-                        <strong style="color: var(--navy); font-size: 13px;">Renewable Energy Power Conversion
-                          Systems</strong>
-                        <p style="font-size: 12px; color: var(--slate-dark);">System-level engineering and
-                          high-fidelity, multi-domain modeling and control of advanced electrical machines and power
-                          electronics. Proven expertise in integrating complex components into cohesive architectures,
-                          spanning residential PV-and-battery-to-grid energy management chains up to utility-scale +3MW
-                          wind turbine power conversion systems. Expert at bridging microscopic circuit-level transient
-                          analysis of converter switching cells with macroscopic finite element electromagnetic modeling
-                          of DFIM and PMSM configurations. Combines detailed device-level physics with robust MPPT
-                          control algorithms to optimize overall system dynamics, efficiency, and grid integration. </p>
-                      </div>
-                      <div style="border-left: 3px solid var(--navy); padding-left: 10px;">
-                        <strong style="color: var(--navy); font-size: 13px;">IT Infrastructure & Technical
-                          Leadership</strong>
-                        <p style="font-size: 12px; color: var(--slate-dark);">Proven track record in hardware
-                          maintenance and network optimization, with a focus on minimizing downtime and avoiding the
-                          costs associated with server and network failures. Leveraged PowerShell and Python for
-                          routine automation, to increase operational efficiency, leading teams to maintain peak
-                          enterprise network and IT systems stability.</p>
-                      </div>
+                <div class="about-middle-column">
+
+                  <section class="about-core-journey">
+                    <div class="journey-block">
+                      <h2 class="about-timeline-heading">Academic Journey </h2>
+                      <p>Driven by a passion for electronics and engineering systems, I chose an academic path to learn how electronics work, how actuators and electrical machines are designed and controlled, and how to connect everything together into a system while adapting new technologies.</p>
                     </div>
-                  </div>
+
+                    <div class="journey-block">
+                      <h2 class="about-timeline-heading">From Personal Interest to Academic Expertise</h2>
+                      <p>My love for traveling, cars, and aircraft inspired a deep interest in speed and high-torque machines, creating a desire to learn how to build, maintain, repair, and develop them. This initial curiosity shaped my education and guided my career into research and development, where I completed my Master's degree working on renewable energy and Vehicle Powertrain systems.</p>
+                    </div>
+
+                    <div class="journey-block">
+                      <h2 class="about-timeline-heading">Career Motivation & Focus</h2>
+                      <p>Because I always found myself working at the intersection of software development and hardware design, transitioning into systems engineering was a natural next step. This unique balance has allowed me to seamlessly manage complex projects and bridge the gap between physical hardware and digital control systems throughout my career.</p>
+                    </div>
+                  </section>
+
+
+                  <section class="about-expertise-domains">
+                    <h2 class="about-timeline-heading">Career Insights</h2>
+                    <div class="about-domain-list">
+                      <article class="about-domain-item"><h3>Aerospace Systems Engineering</h3><p>fire-suppression system design,Latching Valve Actuator Design, Mechanical / Electromagnetic optimization.</p></article>
+                      <article class="about-domain-item"> <h3>IT Hardware Maintenance</h3> <p>Component-level hardware and firmware diagnostics, low/high-end server deployment (SAN/NAS), network architecture support, and technical interface management for major IBM EMEA enterprise accounts.</p></article>
+                      <article class="about-domain-item"><h3>Automotive Powertrain Systems</h3><p>800V SiC inverters and 48V belt starter generators; OBD, fault-state design, ISO 26262 and A-SPICE.</p></article>
+                      <article class="about-domain-item"><h3>Renewable Energy Power Conversion</h3><p>System Sizing, design and control of : PV systems, Wind turbines systems, Grid-coupled BES systems</p></article>
+                    </div>
+                  </section>
+
                 </div>
-              </div>
-            </div>
+
+                <div class="about-career-column">
+                  <section class="about-experience-timeline">
+                    <h2 class="about-timeline-heading">Professional Experience</h2>
+                    <ol class="about-timeline-list experience-list">
+                    <li class="about-timeline-item"><time>Jan 2025 – Present</time><h3><img src="assets/img/Sonnen Logo.png" alt="">Senior System Engineer · Sonnen GmbH</h3></li>
+                    <li class="about-timeline-item"><time>Apr 2022 – Dec 2024</time><h3><img src="assets/img/Valeo.png" alt="">System Engineer · Valeo</h3></li>
+                    <li class="about-timeline-item"><time>Jan 2021 – Mar 2022</time><h3><img src="assets/img/IBM.png" alt="">Hardware Engineer · IBM</h3></li>
+                    <li class="about-timeline-item"><time>Apr 2020 – Oct 2020</time><h3><img src="assets/img/FACT.png" alt="">System Design Engineer · FACT Group</h3></li>
+                    <li class="about-timeline-item"><time>Oct 2019 – Feb 2020</time><h3><img src="assets/img/l2ep.png" alt="">Engineering Intern · L2EP Laboratory</h3></li>
+                    </ol>
+                  </section>
+                  <section class="about-education-timeline">
+                    <h2 class="about-timeline-heading">Education</h2>
+                    <ol class="about-timeline-list education-list">
+                    <li class="about-timeline-item">
+                        <time>2018 – 2020 · Lille, France</time>
+                        <h3>Master of Science in Engineering</h3>
+                        <p><strong>Electrical Engineering · Sustainable Development (Rank: 5th/22) · Université de Lille / Centrale Lille / Arts et Métiers</strong></p>
+                        <p><strong>Master's Thesis (L2EP):</strong> Design of Power Electronic Control Drive of a Doubly Fed Induction Generator Used in Large Wind Turbines</p>
+                        <p><strong>Electrical Machine Design & Drives: PMSM/SRM/IM</strong> </p>
+                        <p><strong>Powertrain System & BMS Modeling</strong> </p>
+                      </li>
+                    <li class="about-timeline-item">
+                        <time>2014 – 2018 · Lille, France</time>
+                        <h3>Bachelor of Science in Engineering</h3>
+                        <p><strong>Electronics·Electrical Energy·Automation(EEA)· (Rank: 23rd/121) Université de Lille</strong></p>
+                        <p><strong>BS Engineering Project:</strong> Sizing BESS for passive houses </p>
+                        <p><strong>EEA Program Core Engineering Foundations:</strong> mathematics and physics, analog/digital electronics, signal analysis, Actuators & Machines drive, Embedded Control</p>
+                    </li>
+
+                    <li class="about-timeline-item"><time>2014 · Cairo, Egypt</time><h3>High School Diploma</h3><p>Sciences & Mathematics · Lycée Elhorreya de Maadi</p></li>
+                    </ol>
+                  </section>
+                </div>
+                <footer class="slide-footer">
+                  <button class="print-button" type="button" aria-label="Print this slide" title="Print slide" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+                      <path d="M7 14h10v7H7zM17 11h.01" />
+                    </svg>
+                  </button>
+                </footer>
+                <dialog class="photo-viewer" aria-label="Photo viewer">
+                  <button class="photo-viewer-close" type="button" aria-label="Close enlarged photo">&times;</button>
+                  <img class="photo-viewer-image" alt="">
+                </dialog>
           </article>
 
         </div>
 
 
-
-        <!-- ===================================================================
-             SLIDE NUMBERING & CONTROLS AT THE BOTTOM OF EACH SLIDE
-             =================================================================== -->
-        <div class="slide-bottom-bar">
-          <div class="bottom-info-left" id="bottom-info-left">About Me</div>
-          <div class="bottom-dots" id="bottom-dots"></div>
-          <div class="bottom-nav-controls">
-            <button id="btn-prev" class="btn-bottom-step" title="Previous Slide (Key: ←)">‹ Prev</button>
-            <span class="bottom-slide-number" id="bottom-slide-number">01 / 04</span>
-            <button id="btn-next" class="btn-bottom-step" title="Next Slide (Key: → or Space)">Next ›</button>
-          </div>
-        </div>
 
       </div>
     </main>
 
   </div>
+  <script src="assets/js/canvas-fit.js"></script>
+  <script>
+    const photoViewer = document.querySelector('.photo-viewer');
+    const photoViewerImage = document.querySelector('.photo-viewer-image');
 
-  <script src="assets/js/presentation.js"></script>
+    document.querySelectorAll('.gallery-photo').forEach((button) => {
+      button.addEventListener('click', () => {
+        const thumbnail = button.querySelector('img');
+        photoViewerImage.src = button.dataset.fullImage;
+        photoViewerImage.alt = thumbnail.alt;
+        photoViewer.showModal();
+      });
+    });
+
+    document.querySelector('.photo-viewer-close').addEventListener('click', () => photoViewer.close());
+    photoViewer.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      photoViewer.close();
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && photoViewer.open) photoViewer.close();
+    });
+    photoViewer.addEventListener('click', (event) => {
+      if (event.target === photoViewer) photoViewer.close();
+    });
+  </script>
 </body>
 
 </html>

@@ -12,6 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Daoud | CV</title>
+    <meta name="description" content="Curriculum vitae of Mohamed Daoud, Electrical Systems Engineer.">
     <style>
         /* ==========================================================================
        1. Global Print Color Preservation and Page Setup Restorations
@@ -483,13 +485,57 @@
                 break-after: avoid-page !important;
             }
         }
+
+        /* Portfolio shell with a centered, uniformly scaled A4 CV preview. */
+        html, body.cv-page { width: 100%; height: 100%; overflow: hidden; }
+        body.cv-page { display: block; padding: 0; background: #071630; }
+        .cv-app { display: flex; width: 100%; height: 100vh; height: 100dvh; flex-direction: column; overflow: hidden; font-family: Arial, sans-serif; }
+        .cv-site-header { flex: none; background: #0a224f; color: #fff; }
+        .cv-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 28px; border-bottom: 1px solid #ffffff20; }
+        .cv-brand-left { display: flex; align-items: baseline; gap: 12px; }
+        .cv-brand-name { color: #fff; font-size: 17px; font-weight: 800; text-decoration: none; }
+        .cv-brand-sub, .cv-brand-right { color: #e6f0ff; font-size: 12px; }
+        .cv-brand-right { font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .cv-tabs { display: flex; justify-content: center; gap: 8px; padding: 6px 16px; background: #081a3d; }
+        .cv-tabs a { padding: 8px 18px; border: 1px solid transparent; border-radius: 4px; color: #e6f0ff; font-size: 13px; font-weight: 700; text-decoration: none; }
+        .cv-tabs a:hover, .cv-tabs a.active { background: #e6f0ff; color: #0a224f; }
+        .cv-canvas-stage { position: relative; display: grid; flex: 1; width: 100%; min-width: 0; min-height: 0; place-items: center; padding: 0; overflow: hidden; }
+        .cv-canvas-stage .page-canvas { position: absolute; top: 50%; left: 50%; flex: none; transform: translate(-50%, -50%) scale(var(--canvas-scale, 1)); transform-origin: center; }
+        .cv-print-footer { position: fixed; right: 16px; bottom: 8px; z-index: 20; }
+        .cv-print-button { display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #071d41; cursor: pointer; opacity: .7; }
+        .cv-print-button:hover, .cv-print-button:focus-visible { background: #071d4112; opacity: 1; }
+        .cv-print-button:focus-visible { outline: 2px solid #071d41; outline-offset: 2px; }
+        .cv-print-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+        @media print {
+            html, body.cv-page, .cv-app { width: 210mm !important; height: 297mm !important; margin: 0 !important; overflow: hidden !important; }
+            .cv-site-header, .cv-print-footer { display: none !important; }
+            .cv-canvas-stage { position: relative !important; display: block !important; width: 210mm !important; height: 297mm !important; padding: 0 !important; overflow: hidden !important; }
+            .cv-canvas-stage .page-canvas { position: relative !important; top: auto !important; left: auto !important; transform: none !important; }
+        }
     </style>
 </head>
 
-<body>
+<body class="cv-page">
+    <div class="cv-app">
+        <header class="cv-site-header">
+            <div class="cv-brand-row">
+                <div class="cv-brand-left">
+                    <a class="cv-brand-name" href="index.html">MOHAMED DAOUD</a>
+                    <span class="cv-brand-sub">M.Sc. in Electrical Engineering &amp; Sustainable Development</span>
+                </div>
+                <span class="cv-brand-right">Portfolio</span>
+            </div>
+            <nav class="cv-tabs" aria-label="Portfolio pages">
+                <a href="index.html">About Me</a>
+                <a href="projects.html">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a class="active" href="CV.html" aria-current="page">CV</a>
+            </nav>
+        </header>
 
-    <!-- Precision Dimension Bound Page Box Wrapper Canvas Layout Container -->
-    <div class="page-canvas">
+        <main class="cv-canvas-stage" data-fit-canvas>
+    <!-- A4 CV canvas -->
+    <div class="page-canvas" data-fixed-canvas>
         <!-- LEFT SIDEBAR PANEL SECTION -->
         <aside class="sidebar-pane">
             <div class="navy-profile-badge">
@@ -669,7 +715,7 @@
 
 
         <!-- RIGHT MAIN INFORMATION FEED PANEL BODY SECTION -->
-        <main class="main-content-pane">
+        <section class="main-content-pane">
 
             <!-- Academic Background Section Module -->
             <div class="content-section-gap">
@@ -848,8 +894,19 @@
 
             </div>
 
-        </main>
+        </section>
 
+    </div>
+    </main>
+    <footer class="cv-print-footer">
+        <button class="cv-print-button" type="button" aria-label="Print CV" title="Print CV" onclick="window.print()">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+                <path d="M7 14h10v7H7zM17 11h.01" />
+            </svg>
+        </button>
+    </footer>
+    <script src="assets/js/canvas-fit.js"></script>
     </div>
 
 </body>
