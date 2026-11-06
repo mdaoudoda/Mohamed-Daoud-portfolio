@@ -1,0 +1,18 @@
+.page-career .slide-canvas {
+  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "experience education"
+    "nav nav";
+}
+
+.about-experience-timeline,
+.about-education-timeline {
+  display: flex;
+  flex-direction: column;
+  background: var(--ice-2);
+}
+.about-experience-timeline { grid-area: experience; }
+.about-education-timeline { grid-area: education; }
+.about-timeline-list { flex: 1; }
+.slide-footer { grid-area: nav; }

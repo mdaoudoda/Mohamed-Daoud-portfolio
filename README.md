@@ -1,50 +1,17 @@
-# Mohamed Daoud - Portfolio
+# Mohamed Daoud — Portfolio
 
-A personal portfolio website tailored for Mohamed Daoud, showcasing professional experience, projects, skills, and background in Electrical Engineering and Tech Innovation.
+Static 16:9 slide deck. `CV.html` is a separate page and is not part of the navigation.
 
-## Project Overview
+Every slide uses the navy and ice palette in `assets/css/shell.css`. Shared frame, scaling, and print behavior live in `assets/css/shell.css`, `assets/js/canvas-fit.js`, and `assets/js/deck.js`.
 
-This website serves as a digital resume and portfolio. It highlights:
-- **Professional Experience**: Interactive timeline of career history.
-- **Projects**: Summary of technical projects and internships.
-- **Skills**: Categorized technical and soft skills.
-- **About Me**: Personal background and interests.
+| # | Slide | HTML | CSS |
+| --- | --- | --- | --- |
+| 01 | About Me | `index.html` | `assets/css/about.css` |
+| 02 | Career and Education | `career.html` | `assets/css/career.css` |
+| 03 | Technical Stack | `skills.html` | `assets/css/skills.css` |
+| 04 | Projects | `projects.html` | `assets/css/projects.css` |
+| 05 | Center of Interest | `personal.html` | `assets/css/personal.css` |
 
-## Architecture
+`index.html` is About Me. The header tabs and the footer arrows follow the order above. The print icon prints all five slides, one page each.
 
-The project follows a clean, component-based structure:
-
-```
-.
-├── assets/
-│   ├── css/
-│   │   └── style.css       # Centralized stylesheet
-│   ├── img/                # Images and icons
-│   ├── js/                 # (Reserved for future scripts)
-│   └── video/
-│       └── background.mp4  # Background video resource
-├── index.html              # Landing page (About Me)
-├── experience.html         # Professional Experience page
-├── projects.html           # Projects page
-├── skills.html             # Skills page
-└── README.md               # This documentation
-```
-
-## How to View
-
-1.  Clone this repository or download the source code.
-2.  Open `https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/` in any modern web browser.
-3.  Navigate through the menu links to explore different sections.
-
-## Technologies Used
-
-- **HTML5**: Semantic structure.
-- **CSS3**: Styling, animations, and responsive layout.
-- **Assets**: Optimized images and video background.
-
-## Author
-
-**Mohamed Daoud**
-- Electrical Engineer | Tech Innovator
-- [Portfolio](https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/)
-- [LinkedIn Profile](https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urnlipaged_flagship3_profile_self_edit_top_cardPCYPgheNS1m2FlTsxC4N7A)
+Edit the wording in the slide HTML. Edit that slide's layout in its CSS file.

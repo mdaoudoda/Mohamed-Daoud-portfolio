@@ -1,0 +1,202 @@
+/* Shared frame for every slide. Slide files set the palette and the inner grid. */
+:root {
+  --navy: #0a224f;
+  --ice: #e6f0ff;
+  --ice-2: #f4f8ff;
+  --border: #c8dcfc;
+  --line: rgba(10, 34, 79, 0.14);
+  --text: #333;
+  --muted: #646464;
+  --paper: #fff;
+  --stage: #071630;
+  --accent: #0a224f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--stage);
+  color: var(--text);
+  font: 16px/1.35 Arial, sans-serif;
+}
+
+.pres-header { background: var(--navy); color: var(--paper); }
+.header-brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.brand-left { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+.brand-name { color: inherit; font-weight: 800; letter-spacing: 0.4px; text-decoration: none; }
+.brand-sub { color: var(--ice); font-size: 13px; }
+.tabs-bar { display: flex; justify-content: center; gap: 8px; padding: 8px; background: rgba(0, 0, 0, 0.22); }
+.tab-btn { padding: 8px 16px; border-radius: 4px; color: var(--ice); font-weight: 700; text-decoration: none; }
+.tab-btn:hover, .tab-btn.active { background: var(--ice); color: var(--navy); }
+
+.presentation-app { display: flex; flex-direction: column; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; }
+.presentation-stage { display: flex; flex: 1; min-width: 0; min-height: 0; align-items: center; justify-content: center; overflow: hidden; }
+.aspect-16-9-frame { display: flex; flex: 1; width: 100%; height: 100%; align-items: center; justify-content: center; overflow: hidden; }
+
+.slide-canvas {
+  display: grid;
+  width: 1280px;
+  height: 720px;
+  flex: none;
+  padding: 12px;
+  gap: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--paper);
+  transform: scale(var(--canvas-scale, 1));
+  transform-origin: center;
+}
+
+.block {
+  min-width: 0;
+  min-height: 0;
+  padding: 12px 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+}
+
+.block.ice, .hobby { background: var(--ice-2); }
+.card-title, .about-timeline-heading {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 18px;
+}
+.about-timeline-heading { margin-bottom: 6px; font-size: 16px; text-transform: uppercase; }
+
+.slide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 0;
+  padding: 0 4px;
+}
+.deck-move { display: flex; align-items: center; gap: 8px; }
+.deck-move a, .deck-label {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.deck-move a { padding: 4px 8px; border-radius: 4px; }
+.deck-move a:hover { background: var(--ice); }
+.slide-number {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.print-root { display: none; }
+
+.print-button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+.print-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+
+.about-timeline-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0 0 0 8px;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--border);
+  list-style: none;
+}
+.about-timeline-item { position: relative; }
+.about-timeline-item::before {
+  position: absolute;
+  top: 5px;
+  left: -21px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+.about-timeline-item time { color: var(--muted); font-size: 13px; font-weight: 700; }
+.about-timeline-item h3 { display: flex; align-items: center; gap: 8px; margin: 3px 0; color: var(--navy); font-size: 16px; }
+.about-timeline-item h3 img { width: 26px; height: 26px; object-fit: contain; }
+.about-timeline-item p { margin: 3px 0; color: var(--muted); font-size: 14px; }
+
+.photo-viewer {
+  width: min(92vw, 1100px);
+  max-height: 90vh;
+  padding: 42px 12px 12px;
+  border: 0;
+  background: var(--stage);
+}
+.photo-viewer::backdrop { background: rgba(3, 11, 24, 0.9); }
+.photo-viewer-image { display: block; max-width: 100%; max-height: calc(90vh - 56px); margin: auto; }
+.photo-viewer-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@page { size: 13.333in 7.5in; margin: 0; }
+@media print {
+  html, body { margin: 0 !important; background: #fff !important; }
+  body:has(.print-root) .presentation-app,
+  .photo-viewer { display: none !important; }
+  .print-root { display: block !important; }
+  .print-root .print-sheet {
+    display: block;
+    width: 13.333in;
+    height: 7.5in;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-root .print-sheet:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .print-root .slide-canvas {
+    width: 13.333in !important;
+    height: 7.5in !important;
+    max-height: 7.5in !important;
+    transform: none !important;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden !important;
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .print-root .slide-footer { display: none !important; }
+  .print-root .page-skills .skills-board,
+  .print-root .page-skills .skills-column {
+    height: 100%;
+    min-height: 0;
+  }
+}

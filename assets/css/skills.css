@@ -1,0 +1,64 @@
+.page-skills .slide-canvas {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "banner"
+    "board"
+    "nav";
+}
+
+.skills-banner {
+  grid-area: banner;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--ice-2);
+}
+.skills-banner-title { margin: 0; color: var(--navy); font-size: 20px; font-weight: 800; text-transform: uppercase; }
+.skills-banner-sub { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
+.skills-banner-badge {
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: var(--navy);
+  color: var(--ice);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.skills-board {
+  grid-area: board;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  min-height: 0;
+}
+.skills-column { display: grid; gap: 8px; min-width: 0; min-height: 0; }
+.skills-col-left { grid-template-rows: 1fr 1fr; }
+.skills-col-center, .skills-col-right { grid-template-rows: 1fr 1fr 1fr; }
+.skills-column .geo-card { display: flex; flex-direction: column; margin: 0; padding: 8px 10px; }
+.skills-column .card-title { margin-bottom: 4px; font-size: 14px; }
+
+.skill-chips-wrap { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 5px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+}
+.geo-card:not(.accent-ice) .skill-chip { background: var(--ice-2); }
+.skill-chip img { width: 14px; height: 14px; object-fit: contain; }
+.skills-list { margin: 0; padding-left: 16px; }
+.skills-list li { margin-top: 2px; color: var(--text); font-size: 12px; line-height: 1.25; }
+.skills-list strong { color: var(--navy); }
+.lang-flag { width: 14px; height: 10px; object-fit: cover; vertical-align: middle; }
+.slide-footer { grid-area: nav; }

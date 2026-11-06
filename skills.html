@@ -1,69 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4QHR5E7BG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-W4QHR5E7BG');
+    gtag("js", new Date());
+    gtag("config", "G-W4QHR5E7BG");
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohamed Daoud | Skills</title>
-  <meta name="description"
-    content="Technical skills and engineering toolchain of Mohamed Daoud - Programming, Simulation Suites, Automotive Standards, Embedded Systems, CAD, and Languages.">
-  <link rel="stylesheet" href="assets/css/about.css">
+  <meta name="description" content="Technical skills and engineering toolchain of Mohamed Daoud - Programming, Simulation Suites, Automotive Standards, Embedded Systems, CAD, and Languages.">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/skills.css">
 </head>
-
-<body class="about-presentation skills-page">
+<body class="page-skills">
   <div class="presentation-app">
-
-    <!-- Minimalist Top Navigation Header -->
     <header class="pres-header">
       <div class="header-brand-row">
         <div class="brand-left">
           <a href="index.html" class="brand-name">MOHAMED DAOUD</a>
           <span class="brand-sub">M.Sc. in Electrical Engineering &amp; Sustainable Development</span>
         </div>
-        <div class="brand-right">
-          <span>Portfolio</span>
-        </div>
       </div>
-
-      <!-- Clean Tabs -->
       <nav class="tabs-bar">
         <a href="index.html" class="tab-btn">About Me</a>
-        <a href="skills.html" class="tab-btn active">Skills</a>
-        <a href="CV.html" class="tab-btn">Curriculum Vitae</a>
+        <a href="career.html" class="tab-btn">Career and Education</a>
+        <a href="skills.html" class="tab-btn active">Technical Stack</a>
+        <a href="projects.html" class="tab-btn">Projects</a>
+        <a href="personal.html" class="tab-btn">Center of Interest</a>
       </nav>
     </header>
-
-    <!-- Presentation Stage (PC 16:9 / Mobile Adaptive) -->
     <main class="presentation-stage" data-fit-canvas>
       <div class="aspect-16-9-frame">
-        <div class="deck-section active" id="section-skills" data-fixed-canvas>
+        <article class="slide-canvas" data-fixed-canvas>
+          <header class="skills-banner block">
+            <div class="skills-banner-text">
+              <h1 class="skills-banner-title">Engineering Competencies &amp; Technical Toolchain</h1>
+              <p class="skills-banner-sub">Systems Engineering · Automotive Standards (ISO 26262, ASPICE) · Power
+                Electronics · Multiphysics Simulation · Embedded Control</p>
+            </div>
+              <a href="cv.html" class="skills-banner-badge cv-link-button">Technical Stack</a>
+          </header>
 
-          <!-- Single Merged Slide: Engineering Competencies & Toolchain -->
-          <article class="slide active skills-slide">
-
-            <!-- Slide Header Banner -->
-            <header class="skills-banner">
-              <div class="skills-banner-text">
-                <h1 class="skills-banner-title">Engineering Competencies &amp; Technical Toolchain</h1>
-                <p class="skills-banner-sub">Systems Engineering · Automotive Standards (ISO 26262, ASPICE) · Power
-                  Electronics · Multiphysics Simulation · Embedded Control</p>
-              </div>
-              <div class="skills-banner-badge">Technical Stack</div>
-            </header>
-
-            <!-- Column 1: Software & Hardware Infrastructure -->
+          <div class="skills-board">
             <div class="skills-column skills-col-left">
-
-              <!-- Card 1: Programming & Software Development -->
-              <div class="geo-card accent-ice">
+              <div class="geo-card block accent-ice">
                 <h2 class="card-title">Programming &amp; Software Development</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/python.png" alt="Python"> Python</span>
@@ -84,9 +67,7 @@
                     front-end architectures.</li>
                 </ul>
               </div>
-
-              <!-- Card 2: Embedded Systems, Microcontrollers & Hardware -->
-              <div class="geo-card">
+              <div class="geo-card block">
                 <h2 class="card-title">Embedded Systems &amp; Hardware Infrastructure</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/Arduino.png" alt="Arduino"> Arduino</span>
@@ -105,14 +86,10 @@
                     ThinkServer, and SAN/NAS arrays.</li>
                 </ul>
               </div>
-
             </div>
 
-            <!-- Column 2: Modeling, Simulation & Multiphysics -->
             <div class="skills-column skills-col-center">
-
-              <!-- Card 3: Model-Based Design & Control -->
-              <div class="geo-card">
+              <div class="geo-card block">
                 <h2 class="card-title">Model-Based Design &amp; Control</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/Matlab.png" alt="MATLAB"> MATLAB</span>
@@ -128,9 +105,7 @@
                     (BMS), and MPPT algorithms.</li>
                 </ul>
               </div>
-
-              <!-- Card 4: Electromagnetic FEA & Optimization -->
-              <div class="geo-card accent-ice">
+              <div class="geo-card block accent-ice">
                 <h2 class="card-title">Electromagnetic FEA &amp; Optimization</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/HEEDS.png" alt="HEEDS"> HEEDS</span>
@@ -148,9 +123,7 @@
                     analysis in FEMM.</li>
                 </ul>
               </div>
-
-              <!-- Card 5: Power Electronics, Circuits & CAD -->
-              <div class="geo-card">
+              <div class="geo-card block">
                 <h2 class="card-title">Power Electronics, Circuits &amp; CAD</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/psim.png" alt="PSIM"> PSIM</span>
@@ -166,14 +139,10 @@
                     design in SOLIDWORKS.</li>
                 </ul>
               </div>
-
             </div>
 
-            <!-- Column 3: Automotive Standards, Safety & Management -->
             <div class="skills-column skills-col-right">
-
-              <!-- Card 6: Traceability, Modeling & Networks -->
-              <div class="geo-card accent-ice">
+              <div class="geo-card block accent-ice">
                 <h2 class="card-title">Traceability, Modeling &amp; Networks</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip"><img src="assets/img/Doors.png" alt="DOORS"> DOORS</span>
@@ -193,9 +162,7 @@
                     and diagnostic validation.</li>
                 </ul>
               </div>
-
-              <!-- Card 7: Functional Safety & Process Standards -->
-              <div class="geo-card">
+              <div class="geo-card block">
                 <h2 class="card-title">Functional Safety &amp; Process Standards</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip">ASPICE (SYS.1–SYS.5)</span>
@@ -214,9 +181,7 @@
                     quantitative Fault Tree Analysis (FTA).</li>
                 </ul>
               </div>
-
-              <!-- Card 8: Enterprise IT, Project Tools & Languages -->
-              <div class="geo-card accent-ice">
+              <div class="geo-card block accent-ice">
                 <h2 class="card-title">Enterprise IT, Project Tools &amp; Languages</h2>
                 <div class="skill-chips-wrap">
                   <span class="skill-chip">MS Project</span>
@@ -235,28 +200,24 @@
                   </li>
                 </ul>
               </div>
-
             </div>
+          </div>
 
-            <!-- Slide Footer with Print Button -->
-            <footer class="slide-footer">
-              <button class="print-button" type="button" aria-label="Print this slide" title="Print slide"
-                onclick="window.print()">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
-                  <path d="M7 14h10v7H7zM17 11h.01" />
-                </svg>
+          <footer class="slide-footer">
+            <div class="deck-move"><a href="career.html">Prev</a></div>
+            <span class="slide-number">03 / 05</span>
+            <div class="deck-move">
+              <a href="projects.html">Next</a>
+              <button class="print-button" type="button" aria-label="Print the presentation" title="Print all slides">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" /><path d="M7 14h10v7H7zM17 11h.01" /></svg>
               </button>
-            </footer>
-
-          </article>
-
-        </div>
+            </div>
+          </footer>
+        </article>
       </div>
     </main>
-
   </div>
   <script src="assets/js/canvas-fit.js"></script>
+  <script src="assets/js/deck.js"></script>
 </body>
-
 </html>
