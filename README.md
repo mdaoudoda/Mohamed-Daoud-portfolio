@@ -1,5 +1,7 @@
 # Mohamed Daoud — Portfolio
 
+Open the portfolio: [mdaoudoda.github.io/Mohamed-Daoud-portfolio](https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/)
+
 Static 16:9 slide deck. `CV.html` is a separate page and is not part of the navigation.
 
 Every slide uses the navy and ice palette in `assets/css/shell.css`. Shared frame, scaling, and print behavior live in `assets/css/shell.css`, `assets/js/canvas-fit.js`, and `assets/js/deck.js`.
