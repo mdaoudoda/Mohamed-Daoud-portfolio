@@ -461,7 +461,7 @@
             margin-bottom: 7px;
         }
 
-        .edu-entry-card + .edu-entry-card {
+        .edu-entry-card+.edu-entry-card {
             margin-top: 6px !important;
         }
 
@@ -487,30 +487,186 @@
         }
 
         /* Portfolio shell with a centered, uniformly scaled A4 CV preview. */
-        html, body.cv-page { width: 100%; height: 100%; overflow: hidden; }
-        body.cv-page { display: block; padding: 0; background: #071630; }
-        .cv-app { display: flex; width: 100%; height: 100vh; height: 100dvh; flex-direction: column; overflow: hidden; font-family: Arial, sans-serif; }
-        .cv-site-header { flex: none; background: #0a224f; color: #fff; }
-        .cv-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 28px; border-bottom: 1px solid #ffffff20; }
-        .cv-brand-left { display: flex; align-items: baseline; gap: 12px; }
-        .cv-brand-name { color: #fff; font-size: 17px; font-weight: 800; text-decoration: none; }
-        .cv-brand-sub, .cv-brand-right { color: #e6f0ff; font-size: 12px; }
-        .cv-brand-right { font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        .cv-tabs { display: flex; justify-content: center; gap: 8px; padding: 6px 16px; background: #081a3d; }
-        .cv-tabs a { padding: 8px 18px; border: 1px solid transparent; border-radius: 4px; color: #e6f0ff; font-size: 13px; font-weight: 700; text-decoration: none; }
-        .cv-tabs a:hover, .cv-tabs a.active { background: #e6f0ff; color: #0a224f; }
-        .cv-canvas-stage { position: relative; display: grid; flex: 1; width: 100%; min-width: 0; min-height: 0; place-items: center; padding: 0; overflow: hidden; }
-        .cv-canvas-stage .page-canvas { position: absolute; top: 50%; left: 50%; flex: none; transform: translate(-50%, -50%) scale(var(--canvas-scale, 1)); transform-origin: center; }
-        .cv-print-footer { position: fixed; right: 16px; bottom: 8px; z-index: 20; }
-        .cv-print-button { display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #071d41; cursor: pointer; opacity: .7; }
-        .cv-print-button:hover, .cv-print-button:focus-visible { background: #071d4112; opacity: 1; }
-        .cv-print-button:focus-visible { outline: 2px solid #071d41; outline-offset: 2px; }
-        .cv-print-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+        html,
+        body.cv-page {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body.cv-page {
+            display: block;
+            padding: 0;
+            background: #071630;
+        }
+
+        .cv-app {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .cv-site-header {
+            flex: none;
+            background: #0a224f;
+            color: #fff;
+        }
+
+        .cv-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 28px;
+            border-bottom: 1px solid #ffffff20;
+        }
+
+        .cv-brand-left {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .cv-brand-name {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .cv-brand-sub,
+        .cv-brand-right {
+            color: #e6f0ff;
+            font-size: 12px;
+        }
+
+        .cv-brand-right {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cv-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: #081a3d;
+        }
+
+        .cv-tabs a {
+            padding: 8px 18px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #e6f0ff;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .cv-tabs a:hover,
+        .cv-tabs a.active {
+            background: #e6f0ff;
+            color: #0a224f;
+        }
+
+        .cv-canvas-stage {
+            position: relative;
+            display: grid;
+            flex: 1;
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            place-items: center;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cv-canvas-stage .page-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            flex: none;
+            transform: translate(-50%, -50%) scale(var(--canvas-scale, 1));
+            transform-origin: center;
+        }
+
+        .cv-print-footer {
+            position: fixed;
+            right: 16px;
+            bottom: 8px;
+            z-index: 20;
+        }
+
+        .cv-print-button {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #071d41;
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        .cv-print-button:hover,
+        .cv-print-button:focus-visible {
+            background: #071d4112;
+            opacity: 1;
+        }
+
+        .cv-print-button:focus-visible {
+            outline: 2px solid #071d41;
+            outline-offset: 2px;
+        }
+
+        .cv-print-button svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.7;
+        }
+
         @media print {
-            html, body.cv-page, .cv-app { width: 210mm !important; height: 297mm !important; margin: 0 !important; overflow: hidden !important; }
-            .cv-site-header, .cv-print-footer { display: none !important; }
-            .cv-canvas-stage { position: relative !important; display: block !important; width: 210mm !important; height: 297mm !important; padding: 0 !important; overflow: hidden !important; }
-            .cv-canvas-stage .page-canvas { position: relative !important; top: auto !important; left: auto !important; transform: none !important; }
+
+            html,
+            body.cv-page,
+            .cv-app {
+                width: 210mm !important;
+                height: 297mm !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+            }
+
+            .cv-site-header,
+            .cv-print-footer {
+                display: none !important;
+            }
+
+            .cv-canvas-stage {
+                position: relative !important;
+                display: block !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+            }
+
+            .cv-canvas-stage .page-canvas {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -527,386 +683,451 @@
             </div>
             <nav class="cv-tabs" aria-label="Portfolio pages">
                 <a href="index.html">About Me</a>
-                <a href="projects.html">Projects</a>
                 <a href="skills.html">Skills</a>
-                <a class="active" href="CV.html" aria-current="page">CV</a>
+                <a class="active" href="CV.html" aria-current="page">Curriculum Vitae</a>
             </nav>
         </header>
 
         <main class="cv-canvas-stage" data-fit-canvas>
-    <!-- A4 CV canvas -->
-    <div class="page-canvas" data-fixed-canvas>
-        <!-- LEFT SIDEBAR PANEL SECTION -->
-        <aside class="sidebar-pane">
-            <div class="navy-profile-badge">
-                <div class="avatar-wrapper">
-                    <img src="assets/img/mohamed-daoud.jpg" alt="Mohamed Daoud">
-                </div>
-                <h1>Mohamed Daoud</h1>
-                <div class="subtitle">M.Sc. in Electrical Engineering & Sustainable Development</div>
-                <div class="dob-text">Contact</div>
-                <!-- Contact Block Component Area -->
-                <div class="sidebar-section">
-                    <h2 class="sidebar-header-title">CONTACT</h2>
-                    <ul class="contact-details-list">
-                        <li>📞 +20 15 543 66309 </li>
-                        <li>📍 Cairo - EGYPT</li>
-                        <li>✉️ <a href="mailto:Med.hossam.elsayed@gmail.com">Med.hossam.elsayed@gmail.com</a></li>
-                        <li>🔗 <a href="https://www.linkedin.com/in/mohamed-daod/" target="_blank">LinkedIn: Mohamed
-                                Daoud</a></li>
-                        <li>💼 <a href="https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/">My Portfolio</a></li>
-                    </ul>
-                </div>
+            <!-- A4 CV canvas -->
+            <div class="page-canvas" data-fixed-canvas>
+                <!-- LEFT SIDEBAR PANEL SECTION -->
+                <aside class="sidebar-pane">
+                    <div class="navy-profile-badge">
+                        <div class="avatar-wrapper">
+                            <img src="assets/img/mohamed-daoud.jpg" alt="Mohamed Daoud">
+                        </div>
+                        <h1>Mohamed Daoud</h1>
+                        <div class="subtitle">M.Sc. in Electrical Engineering & Sustainable Development</div>
+                        <div class="dob-text">Contact</div>
+                        <!-- Contact Block Component Area -->
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-header-title">CONTACT</h2>
+                            <ul class="contact-details-list">
+                                <li>📞 +20 15 543 66309 </li>
+                                <li>📍 Cairo - EGYPT</li>
+                                <li>✉️ <a href="mailto:Med.hossam.elsayed@gmail.com">Med.hossam.elsayed@gmail.com</a>
+                                </li>
+                                <li>🔗 <a href="https://www.linkedin.com/in/mohamed-daod/" target="_blank">LinkedIn:
+                                        Mohamed
+                                        Daoud</a></li>
+                                <li>💼 <a href="https://mdaoudoda.github.io/Mohamed-Daoud-portfolio/">My Portfolio</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Lower White Panel Sidebar Fields Inner Container wrapper -->
+                    <div class="sidebar-inner-content">
+
+                        <!-- Languages proficiency tag items container markup block -->
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-header-title">Languages</h2>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span
+                                    style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                                    Français <span style="font-weight: normal; color: #64748b;">(C1)</span>
+                                </span>
+                                <span
+                                    style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                                    English <span style="font-weight: normal; color: #64748b;">(B2)</span>
+                                </span>
+                                <span
+                                    style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
+                                    Arabic <span style="font-weight: normal; color: #64748b;">(C2 - Native)</span>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <!-- Programming list categories elements code -->
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-header-title">Technical Skills</h2>
+                            <div style="display: flex; flex-direction: column; gap: 9px;">
+
+                                <!-- Category Group 1 -->
+                                <div>
+                                    <div
+                                        style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                        Programming & Automation</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Python</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">C
+                                            / C++</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">VHDL</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Web
+                                            (HTML5/CSS3)</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Embedded
+                                            (ESP32/Arduino)</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">FPGA
+                                            / DSP / PIC</span>
+                                    </div>
+                                </div>
+
+                                <!-- Category Group 2 -->
+                                <div>
+                                    <div
+                                        style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                        MBD, FEA & CAD Design</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MATLAB
+                                            / Simulink</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Modelica</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LabVIEW</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">JMAG
+                                            / FEMM</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">COMSOL
+                                            / Ansys</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">HEEDS
+                                            Optimization</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SOLIDWORKS</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">CATIA
+                                            / AutoCAD</span>
+                                    </div>
+                                </div>
+
+                                <!-- Category Group 3 (Requested Split) -->
+                                <div>
+                                    <div
+                                        style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                        Power Electronics & PCB</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSIM</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LTspice</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSpice</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Altium
+                                            Designer</span>
+                                    </div>
+                                </div>
+
+                                <!-- Category Group 4 (Requested Split) -->
+                                <div>
+                                    <div
+                                        style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                        System Engineering</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">IBM
+                                            DOORS</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Siemens
+                                            Polarion</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Jira
+                                            / Confluence</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">A-SPICE</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">ISO
+                                            26262</span>
+                                    </div>
+                                </div>
+
+                                <!-- Category Group 5 -->
+                                <div>
+                                    <div
+                                        style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
+                                        IT, Operations & Management</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Active
+                                            Directory</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SAP
+                                            ERP/CRM</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Microsoft
+                                            365</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Git
+                                            / GitHub</span>
+                                        <span
+                                            style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MS
+                                            Project</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+
+                <!-- RIGHT MAIN INFORMATION FEED PANEL BODY SECTION -->
+                <section class="main-content-pane">
+
+                    <!-- Academic Background Section Module -->
+                    <div class="content-section-gap">
+                        <h2 class="section-block-title">Education</h2>
+
+                        <div class="edu-entry-card">
+                            <div class="edu-title-line">Master of Science in Engineering: <span
+                                    class="weight-normal">Electrical
+                                    Engineering & sustainable development</span></div>
+                            <div class="edu-university-line">Université de Lille, école centrale Lille, école Arts et
+                                Métiers &
+                                L2EP laboratory</div>
+
+                            <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>2018 – 2020</td>
+                                    <td align="right"><span class="company-location"><img
+                                                src="https://flagcdn.com/fr.svg" alt="FR">Lille, France</span></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="edu-entry-card" style="margin-top:14px;">
+                            <div class="edu-title-line">Bachelor of Science in Engineering: <span
+                                    class="weight-normal">Electrical Engineering</span></div>
+                            <div class="edu-university-line">Université de Lille - sciences et technologie</div>
+                            <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>Major: Electronics, Electrical Energy and Control (EEA) | 2014 – 2018</td>
+                                    <td align="right"><span class="company-location"><img
+                                                src="https://flagcdn.com/fr.svg" alt="FR">Lille, France</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Career Employment Records Block Section -->
+                    <div>
+                        <h2 class="section-block-title">Professional Experience</h2>
+
+                        <!-- Position item block cards 1: Sonnen -->
+                        <div class="work-entry-card">
+                            <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                                <img src="assets/img/Sonnen Logo.png" alt="Sonnen"
+                                    style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                                <span>Senior System Engineer: Sonnen GmbH</span>
+                            </div>
+                            <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                                style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January
+                                        2025 –
+                                        Present</td>
+                                    <td align="right" valign="middle"
+                                        style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                        <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG">
+                                            New
+                                            Cairo, Egypt</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <ul class="work-bullet-tree">
+                                <li><strong>Yukon US Project & VPP Simulation Platform:</strong> Spearheaded MBSE
+                                    deployment for the Yukon US project to integrate Virtual Power Plant (VPP) and
+                                    Energy Management System (EMS) features, engineering a modular, multi-physical FMI
+                                    simulation platform utilizing single/multirate execution, adaptive/fixed-step
+                                    setups, and implicit/explicit solvers.</li>
+                                <li><strong>Inverter Topologies & Battery BMS Modeling:</strong> Modeled complex hybrid
+                                    inverter structures, AC/DC-coupled retrofit architectures, and high-fidelity
+                                    electrical/thermal battery models, designing precharge circuits and Battery
+                                    Management System (BMS) safety control loops to control transient inrush currents.
+                                </li>
+                                <li><strong>SIL/HIL Validation & Experimental Benchmarking:</strong> Formulated
+                                    validated multi-node battery and inverter model libraries, benchmarks, and model
+                                    wrappers optimized for SIL/HIL deployment, directly validating simulation topologies
+                                    against physical, experimental test-bench data to maximize solar self-consumption
+                                    and maximize efficiency.</li>
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Position item block cards 4: Valeo -->
+                        <div class="work-entry-card">
+                            <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                                <img src="assets/img/Valeo.png" alt="Valeo"
+                                    style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                                <span>System Engineer: Valeo</span>
+                            </div>
+                            <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                                style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2022
+                                        –
+                                        December 2024</td>
+                                    <td align="right" valign="middle"
+                                        style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                        <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG">
+                                            Gizeh,
+                                            Egypt</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <ul class="work-bullet-tree">
+                                <li><strong>A-SPICE & V-Model System Engineering:</strong> Authored system and
+                                    system-element requirements specifications (SYS.1/SYS.2/SYS.3) following strict
+                                    A-SPICE guidelines, managing functional analysis, stakeholder requirement
+                                    elicitation, and end-to-end traceability using IBM DOORS and Polarion.</li>
+                                <li><strong>EV Powertrain & OBD Architecture:</strong> Coordinated deliverables for a
+                                    48V Belt Starter Generator (iBSG) and an 800V High-Voltage Silicon Carbide (SiC)
+                                    Inverter, specifying core architectures for state machines, safe-state management,
+                                    On-Board Diagnostics (OBD), and multi-variable estimators (AC voltage, DC link
+                                    temperature, and current derating).</li>
+                                <li><strong>Cross-Functional Review & Test Validation:</strong> Led strict technical
+                                    design reviews with implementation and testing functions in a
+                                    MATLAB/Simulink/TargetLink environment, refining fault state matrices (FSM) and
+                                    analyzing Vector CANoe test results to resolve system anomalies while tracking risks
+                                    and project budgets.</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- Position item block cards 5: IBM -->
+                        <div class="work-entry-card">
+                            <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                                <img src="assets/img/IBM.png" alt="IBM"
+                                    style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                                <span>Hardware Engineer: International Business Machines (IBM)</span>
+                            </div>
+                            <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                                style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January
+                                        2021 – March 2022</td>
+                                    <td align="right" valign="middle"
+                                        style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                        <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG">
+                                            Gizeh,
+                                            Egypt</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <ul class="work-bullet-tree">
+                                <li><strong>Enterprise Hardware & Architecture Diagnostics:</strong> Performed
+                                    component-level hardware problem determination and architecture diagnostics for IBM
+                                    and Lenovo systems, including low-end/high-end servers (System x, ThinkServer,
+                                    ThinkSystem), SAN/NAS storage bays, network switches, and UPS systems.</li>
+                                <li><strong>Component-Level & Firmware Resolution:</strong> Isolated faults down to
+                                    component-level and firmware root-causes across processors, RAID controllers, and
+                                    various DDR RAM models, creating action plans and recommending improvements for
+                                    hardware/firmware maintenance packages.</li>
+                                <li><strong>EMEA Account Management & Deployment:</strong> Acted as the dedicated
+                                    technical interface for major enterprise clients across the EMEA region, providing
+                                    expert machine installation, network configuration support, and case documentation
+                                    to optimize system uptime and drive client satisfaction.</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- Position item block cards 6: FACT Group -->
+                        <div class="work-entry-card">
+                            <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                                <img src="assets/img/FACT.png" alt="FACT Group"
+                                    style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                                <span>System Design Engineer: Fluid Actuation & Control Toulouse (FACT Group)</span>
+                            </div>
+                            <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                                style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2020
+                                        –
+                                        December 2020</td>
+                                    <td align="right" valign="middle"
+                                        style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                        <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR">
+                                            Toulouse,
+                                            France</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <ul class="work-bullet-tree">
+                                <li><strong>Clean Sky Project Electrical Valve Design:</strong> Sized and developed an
+                                    innovative high-flow, constant-pressure valve for aircraft fire suppression systems,
+                                    implementing strict mechanical and electrical boundary constraints to satisfy
+                                    rigorous aerospace standards.</li>
+                                <li><strong>Actuator Modeling & Sizing:</strong> Conducted a comprehensive trade study
+                                    of rotary and linear electric configurations, modeling the optimal linear electric
+                                    actuator using SOLIDWORKS for 3D CAD and JMAG for finite element analysis (FEA).
+                                </li>
+                                <li><strong>Multi-Variable Optimization:</strong> Executed parametric multi-variable
+                                    optimization loops in HEEDS to systematically minimize total valve system weight
+                                    while maintaining peak performance metrics.</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- Position item block cards 7: L2EP Laboratory Classic Layout -->
+                        <div class="work-entry-card">
+                            <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
+                                <img src="assets/img/l2ep.png" alt="L2EP"
+                                    style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
+                                <span>Internship: Laboratoire d'Electrotechnique et d'Electronique de Puissance
+                                    (L2EP)</span>
+                            </div>
+
+                            <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
+                                style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-size: 10px; color: #666666;">October
+                                        2019 –
+                                        February 2020</td>
+                                    <td align="right" valign="middle"
+                                        style="font-size: 10px; color: #666666; white-space: nowrap;">
+                                        <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR">
+                                            Lille,
+                                            France</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <ul class="work-bullet-tree">
+                                <li><strong>3MW Wind Turbine Power System Design:</strong> Collaborated with the L2EP
+                                    team to model a 3MW variable-speed wind turbine utilizing a Doubly Fed Induction
+                                    Generator (DFIM/DFIG) and implemented an Energetic Macroscopic Representation (EMR)
+                                    framework in MATLAB to streamline multi-variable power analysis.</li>
+                                <li><strong>Power Electronics & Control Loop Design:</strong> Modeled a bidirectional
+                                    Back-to-Back converter layout in PSIM and LTSpice using 6.5kV ABB HiPak IGBT
+                                    modules, and deployed stator flux-oriented vector control with PI loops to
+                                    independently decouple torque, active power, and reactive power.</li>
+                                <li><strong>Aerodynamic Optimization & Protection:</strong> Integrated a Maximum Power
+                                    Point Tracking (MPPT) control algorithm to dynamically track optimal tip-speed
+                                    ratios & Developed active crowbar protection schemes to safely damp rotor
+                                    overcurrents during grid fault conditions.</li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+
+                </section>
 
             </div>
-
-            <!-- Lower White Panel Sidebar Fields Inner Container wrapper -->
-            <div class="sidebar-inner-content">
-
-                <!-- Languages proficiency tag items container markup block -->
-                <div class="sidebar-section">
-                    <h2 class="sidebar-header-title">Languages</h2>
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        <span
-                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
-                            Français <span style="font-weight: normal; color: #64748b;">(C1)</span>
-                        </span>
-                        <span
-                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
-                            English <span style="font-weight: normal; color: #64748b;">(B2)</span>
-                        </span>
-                        <span
-                            style="font-size: 10px; padding: 3px 6px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: bold;">
-                            Arabic <span style="font-weight: normal; color: #64748b;">(C2 - Native)</span>
-                        </span>
-                    </div>
-                </div>
-
-
-                <!-- Programming list categories elements code -->
-                <div class="sidebar-section">
-                    <h2 class="sidebar-header-title">Technical Skills</h2>
-                    <div style="display: flex; flex-direction: column; gap: 9px;">
-
-                        <!-- Category Group 1 -->
-                        <div>
-                            <div
-                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
-                                Programming & Automation</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Python</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">C
-                                    / C++</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">VHDL</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Web
-                                    (HTML5/CSS3)</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Embedded
-                                    (ESP32/Arduino)</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">FPGA
-                                    / DSP / PIC</span>
-                            </div>
-                        </div>
-
-                        <!-- Category Group 2 -->
-                        <div>
-                            <div
-                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
-                                MBD, FEA & CAD Design</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MATLAB
-                                    / Simulink</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Modelica</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LabVIEW</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">JMAG
-                                    / FEMM</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">COMSOL
-                                    / Ansys</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">HEEDS
-                                    Optimization</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SOLIDWORKS</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">CATIA
-                                    / AutoCAD</span>
-                            </div>
-                        </div>
-
-                        <!-- Category Group 3 (Requested Split) -->
-                        <div>
-                            <div
-                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
-                                Power Electronics & PCB</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSIM</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">LTspice</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">PSpice</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Altium
-                                    Designer</span>
-                            </div>
-                        </div>
-
-                        <!-- Category Group 4 (Requested Split) -->
-                        <div>
-                            <div
-                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
-                                System Engineering</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">IBM
-                                    DOORS</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Siemens
-                                    Polarion</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Jira
-                                    / Confluence</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">A-SPICE</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #e0f2fe; border-radius: 3px; color: #0369a1; font-weight: bold;">ISO
-                                    26262</span>
-                            </div>
-                        </div>
-
-                        <!-- Category Group 5 -->
-                        <div>
-                            <div
-                                style="font-weight: bold; font-size: 10px; color: #071d41; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.2px;">
-                                IT, Operations & Management</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Active
-                                    Directory</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">SAP
-                                    ERP/CRM</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Microsoft
-                                    365</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">Git
-                                    / GitHub</span>
-                                <span
-                                    style="font-size: 9.5px; padding: 2px 5px; background: #f1f5f9; border-radius: 3px; color: #334155; font-weight: 500;">MS
-                                    Project</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-
-        <!-- RIGHT MAIN INFORMATION FEED PANEL BODY SECTION -->
-        <section class="main-content-pane">
-
-            <!-- Academic Background Section Module -->
-            <div class="content-section-gap">
-                <h2 class="section-block-title">Education</h2>
-
-                <div class="edu-entry-card">
-                    <div class="edu-title-line">Master of Science in Engineering: <span class="weight-normal">Electrical
-                            Engineering & sustainable development</span></div>
-                    <div class="edu-university-line">Université de Lille, école centrale Lille, école Arts et Métiers &
-                        L2EP laboratory</div>
-
-                    <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td>2018 – 2020</td>
-                            <td align="right"><span class="company-location"><img src="https://flagcdn.com/fr.svg"
-                                        alt="FR">Lille, France</span></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="edu-entry-card" style="margin-top:14px;">
-                    <div class="edu-title-line">Bachelor of Science in Engineering: <span
-                            class="weight-normal">Electrical Engineering</span></div>
-                    <div class="edu-university-line">Université de Lille - sciences et technologie</div>
-                    <table class="edu-meta-table" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td>Major: Electronics, Electrical Energy and Control (EEA) | 2014 – 2018</td>
-                            <td align="right"><span class="company-location"><img src="https://flagcdn.com/fr.svg"
-                                        alt="FR">Lille, France</span></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Career Employment Records Block Section -->
-            <div>
-                <h2 class="section-block-title">Professional Experience</h2>
-
-                <!-- Position item block cards 1: Sonnen -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/Sonnen Logo.png" alt="Sonnen"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>Senior System Engineer: Sonnen GmbH</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2025 –
-                                Present</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> New
-                                    Cairo, Egypt</span>
-                            </td>
-                        </tr>
-                    </table>
-<ul class="work-bullet-tree">
-    <li><strong>Yukon US Project & VPP Simulation Platform:</strong> Spearheaded MBSE deployment for the Yukon US project to integrate Virtual Power Plant (VPP) and Energy Management System (EMS) features, engineering a modular, multi-physical FMI simulation platform utilizing single/multirate execution, adaptive/fixed-step setups, and implicit/explicit solvers.</li>
-    <li><strong>Inverter Topologies & Battery BMS Modeling:</strong> Modeled complex hybrid inverter structures, AC/DC-coupled retrofit architectures, and high-fidelity electrical/thermal battery models, designing precharge circuits and Battery Management System (BMS) safety control loops to control transient inrush currents.</li>
-    <li><strong>SIL/HIL Validation & Experimental Benchmarking:</strong> Formulated validated multi-node battery and inverter model libraries, benchmarks, and model wrappers optimized for SIL/HIL deployment, directly validating simulation topologies against physical, experimental test-bench data to maximize solar self-consumption and maximize efficiency.</li>
-</ul>
-
-                </div>
-
-
-                <!-- Position item block cards 4: Valeo -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/Valeo.png" alt="Valeo"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>System Engineer: Valeo</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2022 –
-                                December 2024</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
-                                    Egypt</span>
-                            </td>
-                        </tr>
-                    </table>
-<ul class="work-bullet-tree">
-    <li><strong>A-SPICE & V-Model System Engineering:</strong> Authored system and system-element requirements specifications (SYS.1/SYS.2/SYS.3) following strict A-SPICE guidelines, managing functional analysis, stakeholder requirement elicitation, and end-to-end traceability using IBM DOORS and Polarion.</li>
-    <li><strong>EV Powertrain & OBD Architecture:</strong> Coordinated deliverables for a 48V Belt Starter Generator (iBSG) and an 800V High-Voltage Silicon Carbide (SiC) Inverter, specifying core architectures for state machines, safe-state management, On-Board Diagnostics (OBD), and multi-variable estimators (AC voltage, DC link temperature, and current derating).</li>
-    <li><strong>Cross-Functional Review & Test Validation:</strong> Led strict technical design reviews with implementation and testing functions in a MATLAB/Simulink/TargetLink environment, refining fault state matrices (FSM) and analyzing Vector CANoe test results to resolve system anomalies while tracking risks and project budgets.</li>
-</ul>
-
-                </div>
-
-                <!-- Position item block cards 5: IBM -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/IBM.png" alt="IBM"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>Hardware Engineer: International Business Machines (IBM)</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">January 2021 – March 2022</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/eg.svg" alt="EG"> Gizeh,
-                                    Egypt</span>
-                            </td>
-                        </tr>
-                    </table>
-<ul class="work-bullet-tree">
-    <li><strong>Enterprise Hardware & Architecture Diagnostics:</strong> Performed component-level hardware problem determination and architecture diagnostics for IBM and Lenovo systems, including low-end/high-end servers (System x, ThinkServer, ThinkSystem), SAN/NAS storage bays, network switches, and UPS systems.</li>
-    <li><strong>Component-Level & Firmware Resolution:</strong> Isolated faults down to component-level and firmware root-causes across processors, RAID controllers, and various DDR RAM models, creating action plans and recommending improvements for hardware/firmware maintenance packages.</li>
-    <li><strong>EMEA Account Management & Deployment:</strong> Acted as the dedicated technical interface for major enterprise clients across the EMEA region, providing expert machine installation, network configuration support, and case documentation to optimize system uptime and drive client satisfaction.</li>
-</ul>
-
-                </div>
-
-                <!-- Position item block cards 6: FACT Group -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/FACT.png" alt="FACT Group"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>System Design Engineer: Fluid Actuation & Control Toulouse (FACT Group)</span>
-                    </div>
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">April 2020 –
-                                December 2020</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Toulouse,
-                                    France</span>
-                            </td>
-                        </tr>
-                    </table>
-<ul class="work-bullet-tree">
-    <li><strong>Clean Sky Project Electrical Valve Design:</strong> Sized and developed an innovative high-flow, constant-pressure valve for aircraft fire suppression systems, implementing strict mechanical and electrical boundary constraints to satisfy rigorous aerospace standards.</li>
-    <li><strong>Actuator Modeling & Sizing:</strong> Conducted a comprehensive trade study of rotary and linear electric configurations, modeling the optimal linear electric actuator using SOLIDWORKS for 3D CAD and JMAG for finite element analysis (FEA).</li>
-    <li><strong>Multi-Variable Optimization:</strong> Executed parametric multi-variable optimization loops in HEEDS to systematically minimize total valve system weight while maintaining peak performance metrics.</li>
-</ul>
-
-                </div>
-
-                <!-- Position item block cards 7: L2EP Laboratory Classic Layout -->
-                <div class="work-entry-card">
-                    <div class="work-title-line" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="assets/img/l2ep.png" alt="L2EP"
-                            style="width: 24px; height: 24px; object-fit: contain; flex-shrink: 0;">
-                        <span>Internship: Laboratoire d'Electrotechnique et d'Electronique de Puissance (L2EP)</span>
-                    </div>
-
-                    <table class="work-meta-table" border="0" cellspacing="0" cellpadding="0"
-                        style="width: 100%; margin-top: 4px; margin-bottom: 6px;">
-                        <tr>
-                            <td align="left" valign="middle" style="font-size: 10px; color: #666666;">October 2019 –
-                                February 2020</td>
-                            <td align="right" valign="middle"
-                                style="font-size: 10px; color: #666666; white-space: nowrap;">
-                                <span class="company-location"><img src="https://flagcdn.com/fr.svg" alt="FR"> Lille,
-                                    France</span>
-                            </td>
-                        </tr>
-                    </table>
-
-                        <ul class="work-bullet-tree">
-                            <li><strong>3MW Wind Turbine Power System Design:</strong> Collaborated with the L2EP team to model a 3MW variable-speed wind turbine utilizing a Doubly Fed Induction Generator (DFIM/DFIG) and implemented an Energetic Macroscopic Representation (EMR) framework in MATLAB to streamline multi-variable power analysis.</li>
-                            <li><strong>Power Electronics & Control Loop Design:</strong> Modeled a bidirectional Back-to-Back converter layout in PSIM and LTSpice using 6.5kV ABB HiPak IGBT modules, and deployed stator flux-oriented vector control with PI loops to independently decouple torque, active power, and reactive power.</li>
-                            <li><strong>Aerodynamic Optimization & Protection:</strong> Integrated a Maximum Power Point Tracking (MPPT) control algorithm to dynamically track optimal tip-speed ratios & Developed active crowbar protection schemes to safely damp rotor overcurrents during grid fault conditions.</li>
-                        </ul>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-    </main>
-    <footer class="cv-print-footer">
-        <button class="cv-print-button" type="button" aria-label="Print CV" title="Print CV" onclick="window.print()">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
-                <path d="M7 14h10v7H7zM17 11h.01" />
-            </svg>
-        </button>
-    </footer>
-    <script src="assets/js/canvas-fit.js"></script>
+        </main>
+        <footer class="cv-print-footer">
+            <button class="cv-print-button" type="button" aria-label="Print CV" title="Print CV"
+                onclick="window.print()">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+                    <path d="M7 14h10v7H7zM17 11h.01" />
+                </svg>
+            </button>
+        </footer>
+        <script src="assets/js/canvas-fit.js"></script>
     </div>
 
 </body>
