@@ -39,11 +39,9 @@
   border-top: 1px solid var(--border);
 }
 .hobby-music { padding-top: 0; border-top: 0; }
-.hobby-title { margin-bottom: 6px; color: var(--navy); font-size: 17px; font-weight: 800; }
+.hobby-title { margin-bottom: 4px; color: var(--navy); font-size: 15px; font-weight: 800; }
 .hobby ul { margin: 0; padding-left: 16px; }
-.hobby li { color: var(--text); font-size: 15px; line-height: 1.45; }
-.hobby-music li,
-.hobby-movies li { line-height: 1.92; }
+.hobby li { color: var(--text); font-size: 14px; line-height: 1.4; }
 .hobby-sports ul,
 .hobby-games ul {
   display: flex;

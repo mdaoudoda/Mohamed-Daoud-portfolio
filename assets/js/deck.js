@@ -1,6 +1,6 @@
 (function () {
   var pages = ["index.html", "career.html", "skills.html", "projects.html", "personal.html"];
-  var styles = ["assets/css/about.css", "assets/css/career.css", "assets/css/skills.css", "assets/css/projects.css", "assets/css/personal.css"];
+  var styles = ["about.css", "career.css", "skills.css", "projects.css", "personal.css"];
   var file = location.pathname.split("/").pop();
   if (!file || file === "index.html") file = "index.html";
   var index = pages.indexOf(file);
