@@ -172,7 +172,7 @@ body {
     display: block;
     width: 13.333in;
     height: 7.5in;
-    overflow: hidden;
+    overflow: visible;
     break-after: page;
     page-break-after: always;
     break-inside: avoid;
@@ -189,11 +189,18 @@ body {
     transform: none !important;
     margin: 0;
     border-radius: 0;
-    overflow: hidden !important;
+    overflow: visible !important;
     break-after: auto;
     page-break-after: auto;
   }
-  .print-root .slide-footer { display: none !important; }
+  .print-root .slide-footer {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .print-root .deck-move,
+  .print-root .print-button { display: none !important; }
+  .print-root a[href] { cursor: pointer; }
   .print-root .page-skills .skills-board,
   .print-root .page-skills .skills-column {
     height: 100%;

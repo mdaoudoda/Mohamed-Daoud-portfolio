@@ -1,6 +1,6 @@
 (function () {
-  var pages = ["index.html", "career.html", "skills.html", "projects.html", "personal.html"];
-  var styles = ["about.css", "career.css", "skills.css", "projects.css", "personal.css"];
+  var pages = ["index.html", "projects.html", "skills.html"];
+  var styles = ["about.css", "projects.css", "skills.css"];
   var file = location.pathname.split("/").pop();
   if (!file || file === "index.html") file = "index.html";
   var index = pages.indexOf(file);
@@ -35,6 +35,16 @@
   }
 
   var printRoot = null;
+  var publicOrigin = "https://mdaoudoda.github.io/Mohamed-Daoud-portfolio";
+
+  function absoluteUrl(raw, pageUrl) {
+    if (!raw || /^(mailto:|tel:|#|javascript:)/i.test(raw)) return raw;
+    var absolute = new URL(raw, pageUrl);
+    if (absolute.hostname === "localhost" || absolute.hostname === "127.0.0.1") {
+      return publicOrigin + absolute.pathname + absolute.search + absolute.hash;
+    }
+    return absolute.href;
+  }
 
   function ensureCss(href) {
     var existing = document.querySelector('link[rel="stylesheet"][href="' + href + '"]');
@@ -65,11 +75,13 @@
         var pageUrl = new URL(pages[sheetIndex], location.href);
         canvas.querySelectorAll("[src]").forEach(function (node) {
           var raw = node.getAttribute("src");
-          if (raw) node.setAttribute("src", new URL(raw, pageUrl).href);
+          if (raw) node.setAttribute("src", absoluteUrl(raw, pageUrl));
+        });
+        canvas.querySelectorAll("a[href]").forEach(function (node) {
+          node.setAttribute("href", absoluteUrl(node.getAttribute("href"), pageUrl));
         });
         canvas.removeAttribute("data-fixed-canvas");
-        var footer = canvas.querySelector(".slide-footer");
-        if (footer) footer.remove();
+        canvas.querySelectorAll(".deck-move").forEach(function (node) { node.remove(); });
         var sheet = document.createElement("section");
         sheet.className = (parsed.body.className || ("page-" + pages[sheetIndex].replace(".html", ""))) + " print-sheet";
         sheet.appendChild(document.importNode(canvas, true));

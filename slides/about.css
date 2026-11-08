@@ -1,43 +1,99 @@
+/* =========================================
+   ABOUT PAGE LAYOUT
+   ========================================= */
 .page-about .slide-canvas {
-  grid-template-columns: 390px minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: 310px minmax(0, 0.42fr) minmax(0, 0.43fr) minmax(0, 1.15fr);
+  grid-template-rows: auto minmax(0, 0.55fr) minmax(0, 1.05fr) minmax(0, 0.85fr) auto;
   grid-template-areas:
-    "identity journey"
-    "insights journey"
-    "nav nav";
+    "identity insights   insights   insights"
+    "journey  insights   insights   insights"
+    "journey  experience experience education"
+    "hobbies  hobbies    world      gallery"
+    "nav      nav        nav        nav";
+  gap: 6px;
+  padding: 6px 8px;
 }
 
-.profile-exec-card { grid-area: identity; display: flex; align-items: center; }
-.profile-identity-block { display: flex; align-items: center; gap: 16px; }
-.profile-photo { width: 118px; height: 118px; border: 2px solid var(--border); border-radius: 6px; object-fit: cover; }
-.profile-name-lg { color: var(--navy); font-size: 26px; }
-.profile-meta-sm { color: var(--muted); font-size: 14px; }
+/* Identity Card (Top Left) */
+.profile-exec-card {
+  grid-area: identity;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+}
+.profile-identity-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.profile-photo {
+  width: 68px;
+  height: 68px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  object-fit: cover;
+}
+.profile-name-lg {
+  color: var(--navy);
+  font-size: 20px;
+}
+.profile-meta-sm {
+  color: var(--muted);
+  font-size: 12px;
+}
 
+/* Core Journey (Middle Left - Packed Upwards) */
 .about-core-journey {
   grid-area: journey;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 8px 10px;
+  overflow: hidden;
 }
 .journey-block {
   display: flex;
-  flex: 1;
+  flex: 0 1 auto;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 0;
-  padding-top: 8px;
+  padding-top: 6px;
   border-top: 1px solid var(--border);
 }
-.journey-block:first-child { padding-top: 0; border-top: 0; }
-.journey-block p { margin: 0; font-size: 16px; line-height: 1.4; }
+.journey-block:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.journey-block p {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.22;
+}
+.page-about .journey-block h2 {
+  margin-bottom: 2px;
+  font-size: 12px;
+}
 
-.about-expertise-domains { grid-area: insights; display: flex; flex-direction: column; padding: 10px 12px; }
-.about-expertise-domains h5 { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 600; line-height: 1.3; }
+/* Career Insights (Top Right - Spans Columns 2–4) */
+.about-expertise-domains {
+  grid-area: insights;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+}
+.about-expertise-domains h5 {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
 .about-domain-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 6px;
+  gap: 4px 8px;
   flex: 1;
   min-height: 0;
 }
@@ -45,9 +101,213 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10px;
+  padding-left: 8px;
   border-left: 3px solid var(--accent);
 }
-.about-domain-item h3 { margin: 0; color: var(--navy); font-size: 14px; }
-.about-domain-item p { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.25; }
+.about-domain-item h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 12.5px;
+}
+.about-domain-item p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.2;
+}
+
+/* =========================================
+   CAREER PAGE LAYOUT
+   ========================================= */
+.page-career .slide-canvas {
+  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "experience education"
+    "nav nav";
+}
+
+/* =========================================
+   SHARED TIMELINE & FOOTER BLOCKS
+   ========================================= */
+.about-experience-timeline,
+.about-education-timeline {
+  display: flex;
+  flex-direction: column;
+  background: var(--ice-2);
+  min-height: 0;
+  overflow: hidden;
+}
+.about-experience-timeline { grid-area: experience; }
+.about-education-timeline { grid-area: education; }
+.about-timeline-list { flex: 1; min-height: 0; }
 .slide-footer { grid-area: nav; }
+
+/* =========================================
+   ABOUT PAGE COMPACT TIMELINE OVERRIDES
+   ========================================= */
+.page-about .about-experience-timeline,
+.page-about .about-education-timeline {
+  padding: 6px 10px;
+}
+.page-about .about-timeline-heading,
+.page-about .card-title {
+  margin-bottom: 3px;
+  font-size: 12.5px;
+  text-transform: uppercase;
+}
+.page-about .about-timeline-list {
+  margin-left: 4px;
+  padding-left: 10px;
+}
+.page-about .about-timeline-item::before {
+  top: 3px;
+  left: -14px;
+  width: 6px;
+  height: 6px;
+}
+.page-about .about-timeline-item time {
+  display: block;
+  font-size: 10px;
+  line-height: 1.1;
+}
+.page-about .about-timeline-item h3 {
+  margin: 1px 0;
+  gap: 5px;
+  font-size: 11.5px;
+  line-height: 1.15;
+}
+.page-about .about-timeline-item h3 img {
+  width: 15px;
+  height: 15px;
+}
+.page-about .about-timeline-item p {
+  margin: 1px 0;
+  font-size: 10px;
+  line-height: 1.15;
+}
+
+/* =========================================
+   PERSONAL ROW (Row 4)
+   Hobbies expanded across left + mid-left;
+   Around the World kept narrow next to Gallery
+   ========================================= */
+.page-about .hobbies,
+.page-about .world,
+.page-about .gallery-card {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  min-height: 0;
+  overflow: hidden;
+}
+.page-about .hobbies { grid-area: hobbies; }
+.page-about .world { grid-area: world; }
+.page-about .gallery-card { grid-area: gallery; }
+
+/* Compact Hobbies (3 columns: Music | Movies | Sports stacked over Gaming) */
+.page-about .hobby-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr 0.65fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "music movies sports"
+    "music movies games";
+  gap: 4px;
+  flex: 1;
+  min-height: 0;
+}
+
+.page-about .hobby-music  { grid-area: music; }
+.page-about .hobby-movies { grid-area: movies; }
+.page-about .hobby-sports { grid-area: sports; }
+.page-about .hobby-games  { grid-area: games; }
+
+.page-about .hobby {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px 6px;
+  border-radius: 4px;
+  min-height: 0;
+  overflow: hidden;
+}
+.page-about .hobby-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.page-about .hobby ul {
+  margin: 0;
+  padding-left: 11px;
+  font-size: 8.5px;
+  line-height: 1.15;
+  color: var(--muted);
+}
+.page-about .hobby li {
+  margin-bottom: 1px;
+}
+
+
+/* Compact Around the World (Narrow single-card width) */
+.page-about .world-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 5px;
+  flex: 1;
+  align-content: center;
+  font-size: 8.5px;
+  line-height: 1.15;
+}
+.page-about .world-grid strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--navy);
+}
+.page-about .world-grid img {
+  width: 11px;
+  height: 8px;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Compact Gallery */
+.page-about .about-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  flex: 1;
+  min-height: 0;
+}
+.page-about .about-photo-grid figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.page-about .gallery-photo {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ice-2);
+  cursor: pointer;
+}
+.page-about .gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.page-about .about-photo-grid figcaption {
+  margin-top: 2px;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
