@@ -12,20 +12,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohamed Daoud | Projects</title>
   <link rel="stylesheet" href="../assets/css/shell.css">
-  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="projects.css"> 
 </head>
 <body class="page-projects">
   <div class="presentation-app">
     <header class="pres-header">
       <div class="header-brand-row">
         <div class="brand-left">
-          <a href="index.html" class="brand-name">MOHAMED DAOUD</a>
+          <a href="projects.html" class="brand-name">MOHAMED DAOUD</a>
           <span class="brand-sub">M.Sc. in Electrical Engineering & Sustainable Development</span>
         </div>
       </div>
       <nav class="tabs-bar">
-        <a href="index.html" class="tab-btn active">About Me</a>
-        <a href="projects.html" class="tab-btn">Projects</a>
+        <a href="index.html" class="tab-btn">About Me</a>
+        <a href="projects.html" class="tab-btn active">Projects</a>
         <a href="skills.html" class="tab-btn">Technical Stack</a>
       </nav>
     </header>
@@ -36,96 +36,102 @@
             <h2 class="about-timeline-heading" id="about-projects-title">Projects</h2>
           </header>
           <div class="about-project-group block">
-            <h3>Aerospace, Automotive & Mass Transit Powertrains</h3>
+            <h3>Aerospace, Automotive & Powertrains</h3>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1tG9s0NKW5uHlraUveEXBv_ax7p3l976z/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Aircraft Cargo Inerting System Electrical Valve Design</a>
+              <a href="https://docs.google.com/presentation/d/1tG9s0NKW5uHlraUveEXBv_ax7p3l976z/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Aerospace Linear Actuator & Magnetic Latching Design for Inerting Valves</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Develop a reliable valve actuator for gas inerting functions.
-                <span class="project-meta">Tools:</span> Ansys Workbench, MATLAB/Simulink.
-                <span class="project-meta">Scope Solved:</span> Met DO-160 flight weight limits while maintaining high seat seating profiles during severe bus voltage drops.
+                <span class="project-meta">Goal:</span> Design and optimize a compact (&lt;1 kg), high-temperature (200°C) linear actuator and magnetic latching system delivering uniform force over a 6 mm stroke for an aircraft fuel-tank inerting shut-off valve.
+                <span class="project-meta">Tools:</span> JMAG-Designer (2D/3D FEA), MATLAB (SQP / fmincon optimization), Design of Experiments (DOE), magnetic permeance network modeling.
+                <span class="project-meta">Scope:</span> Selected SmCo permanent magnets and high-saturation soft magnetic alloys for 200°C operation; combined JMAG DOE sensitivity modeling with MATLAB SQP optimization to size a 35 N low-mass magnetic latch, developed a permeance-based radial moving-magnet actuator validated via adaptive-mesh FEA, and sized a thermally constrained 1000-turn copper coil (25 V / 1 A).
+              </span>
+            </div>
+
+            <div class="project-item">
+              <a href="https://docs.google.com/presentation/d/1_OntjJmZnbqvzpVmP5eeefuVQqu5Fl-8/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Valeo iBSG 48V Belt Starter Generator(IBSG) — Platform / HMC</a>
+              <span class="project-desc">
+                <span class="project-meta">Goal:</span> Ensure ASPICE-compliant system architecture, functional fault management, and verification traceability for a 48V mild-hybrid Belt Starter Generator platform.
+                <span class="project-meta">Tools:</span> A-SPICE, ISO 26262, SysML, Enterprise Architect, IBM DOORS, MATLAB/Simulink, Stateflow, dSPACE.
+                <span class="project-meta">Scope:</span> Defined internal system interface specifications, start-up sequences, and On-Board Diagnostics (OBD) requirements; maintained the Fault State Matrix (FSM), refined system requirement specifications, and analyzed system test case results to isolate and resolve hardware/software integration issues.
               </span>
             </div>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1_OntjJmZnbqvzpVmP5eeefuVQqu5Fl-8/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Valeo iBSG 48V Belt Starter Generator</a>
+              <a href="https://docs.google.com/presentation/d/1WrQSUSQN5LjzsjASTy0rs_u8JmZgX1qD/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">800V SiC High-Voltage Traction Inverter (RSA Flex Evan)</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Perform system optimization and signal mapping for a mild-hybrid setup.
-                <span class="project-meta">Tools:</span> MATLAB/Simulink, SabreRD, Vector tools.
-                <span class="project-meta">Scope Solved:</span> Integrated low-voltage transient stability loops that smoothly handle high-current draws during cold-cranks.
+                <span class="project-meta">Goal:</span> Architect and specify safety-critical functional and system requirements (SYS.1–SYS.3) for a next-generation 800V Silicon Carbide (SiC) electric vehicle traction inverter.
+                <span class="project-meta">Tools:</span> A-SPICE (SYS.1–SYS.3), ISO 26262 (ASIL), SysML/UML, Siemens Polarion, Enterprise Architect, MATLAB/Simulink, Stateflow.
+                <span class="project-meta">Scope:</span> Elicited and authored system architecture and functional specifications covering operating state machines, safe-state management, AC voltage estimation, DC-link thermal derating, electromechanical power conversion, Electromagnetic Compatibility (EMC), and lifetime endurance.
               </span>
             </div>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1WrQSUSQN5LjzsjASTy0rs_u8JmZgX1qD/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Valeo 800V SiC Inverter & 4x1 Powertrain</a>
+              <a href="https://docs.google.com/presentation/d/1H5xm1F5AV5pcmGk_nh3MLC1Y997ulEkd/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">EV Powertrain Benchmarking (Tazzari Zero vs. Renault Twizy)</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Simulate high-density Silicon Carbide traction inverters.
-                <span class="project-meta">Tools:</span> PLECS, SabreRD, MATLAB.
-                <span class="project-meta">Scope Solved:</span> Modeled ultra-fast switching profiles to solve high dV/dt concerns while significantly cutting total switching losses.
+                <span class="project-meta">Goal:</span> Model, control, and benchmark the energy efficiency, battery autonomy, and dynamic traction performance of the Tazzari Zero and Renault Twizy electric vehicles.
+                <span class="project-meta">Tools:</span> MATLAB/Simulink, Energetic Macroscopic Representation (EMR).
+                <span class="project-meta">Scope:</span> Built full EMR powertrain models covering battery dynamics, power converter, DC machines, mechanical transmissions, and road-load physics; synthesized closed-loop current and duty-cycle controllers for traction and regenerative braking, and simulated 1-passenger, 10° incline, and 1-hour range scenarios to evaluate battery-vs-torque design trade-offs.
               </span>
             </div>
+
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1H5xm1F5AV5pcmGk_nh3MLC1Y997ulEkd/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Tazzari, Renault Twizy & Zoe Powertrain Simulation (MBD/HIL)</a>
+              <a href="https://docs.google.com/presentation/d/1oyZAoYeSneoshFDmQVr-ruTAbFfDUTzA/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Electromagnetic Design, FEA Optimization & Self-Controled PMSM</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Conduct validation and HIL powertrain testing for micro-EVs.
-                <span class="project-meta">Tools:</span> dSPACE HIL, CANoe, CANape, Simscape.
-                <span class="project-meta">Scope Solved:</span> Executed high-to-low voltage vehicle plant dynamics to completely validate battery state-of-charge calculation loops.
+                <span class="project-meta">Goal:</span> Execute end-to-end analytical sizing, 2D finite element optimization, and closed-loop power electronic drive control for a 1.5 kVA single-phase transformer and a 1.5 kW Brushless Permanent Magnet Synchronous Machine (PMSM).
+                <span class="project-meta">Tools:</span> MATLAB, FEMM (2D Finite Element Analysis), Lua scripting, PSIM, PWM & PI pole-placement control.
+                <span class="project-meta">Scope:</span> Minimized transformer volume via MATLAB geometric sweeps and extracted equivalent circuit impedances in FEMM; sized an 18-slot NdFeB PMSM, automated dynamic rotor stepping via Lua scripts, and reshaped stator slots (Evershed criterion) to eliminate cogging torque and EMF harmonics; simulated PWM choppers and three-phase inverters in PSIM with PI current loops and 30° rotor-synchronized self-control (autopilotage).
               </span>
             </div>
-            <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1oyZAoYeSneoshFDmQVr-ruTAbFfDUTzA/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">PMSM Sizing with Embedded Inverter & Battery</a>
-              <span class="project-desc">
-                <span class="project-meta">Goal:</span> Size a synchronous motor with integrated inverter packages.
-                <span class="project-meta">Tools:</span> Ansys Maxwell, Motor-CAD, Simulink.
-                <span class="project-meta">Scope Solved:</span> Solved dense geometric thermal bounds between the active machine coils and the embedded housing to maintain smooth transient torque profiles.
-              </span>
-            </div>
+
             <div class="project-item">
               <a href="https://docs.google.com/presentation/d/1lyLf8QIAGXURWRUABUHqKA_HdTxSkUkC/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">VAL Railway System & Energy Simulation for Efficiency Inspection</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Simulate mass transit network efficiency.
-                <span class="project-meta">Tools:</span> Custom multi-domain MATLAB frameworks.
-                <span class="project-meta">Scope Solved:</span> Isolated grid network losses by tracking vehicle-to-vehicle power transfers via overlapping regenerative braking cycles.
+                <span class="project-meta">Goal:</span> Evaluate powertrain component efficiency and maximize regenerative braking energy recovery for a Lille Metro VAL vehicle operating on a fixed 2-minute station headway.
+                <span class="project-meta">Tools:</span> MATLAB/Simulink.
+                <span class="project-meta">Scope:</span> Modeled a single VAL vehicle powertrain operating in both motor and generator modes coupled to Lille's fixed-voltage DC grid; inspected energy losses across the traction machine, inverter, and gearbox while simulating varied speed profiles to optimize regenerative braking output under a 2-minute vehicle-to-vehicle frequency constraint.
               </span>
             </div>
+
           </div>
           <div class="about-project-group block">
             <h3>Renewable Energy & Microgrids</h3>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1dxK2pQknSjOEyUt66WbsZrc6tk4Hshju/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">BSE Passive House PV, Battery & Inverter Sizing</a>
+              <a href="https://docs.google.com/presentation/d/1dxK2pQknSjOEyUt66WbsZrc6tk4Hshju/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Passive House PV, Battery & Inverter Sizing</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Balance residential generation and storage capacities based on forecasting data.
-                <span class="project-meta">Tools:</span> Python, PVsyst, Simulink optimization toolboxes.
-                <span class="project-meta">Scope Solved:</span> Authored a Balance of System (BOS) algorithm that maps weather inputs directly to usage arrays to boost passive house autonomy.
+                <span class="project-meta">Goal:</span> Optimize overall system cost and minimize initial CAPEX (Capital Expenditure) by sizing a modular residential solar-plus-storage architecture capable of scaling over time.
+                <span class="project-meta">Tools:</span> Matlab-Simulink optimization toolboxes.
+                <span class="project-meta">Scope:</span> Developed an offline sizing optimization model utilizing 1-year historical load consumption, fixed grid electricity tariffs, and 1-year PV generation profiles to determine optimal PV array capacity, battery pack size, and inverter power rating.
               </span>
             </div>
+
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1TMlATs7F0XNUsmMN_CQ4Us4F61AyImyQ/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Wind Turbine System Control & Conversion</a>
+              <a href="https://docs.google.com/presentation/d/1TMlATs7F0XNUsmMN_CQ4Us4F61AyImyQ/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Design of Power Electronic Control drive of a DFIG used in Large Turbines</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Optimize plant power curves under highly volatile weather fronts.
-                <span class="project-meta">Tools:</span> FAST, state-space toolboxes, Simulink.
-                <span class="project-meta">Scope Solved:</span> Designed closed-loop active pitch control laws that maximize tracking during low winds but reduce mechanical fatigue during high shears.
+                <span class="project-meta">Goal:</span> Maximize wind energy extraction and ensure unity power factor grid integration for a 2 MW Doubly Fed Induction Generator (DFIG) wind turbine across sub-synchronous and hypersynchronous operating modes.
+                <span class="project-meta">Tools:</span> MATLAB/Simulink (Simscape), PSIM.
+                <span class="project-meta">Scope:</span> Modeled wind turbine aerodynamics, MPPT algorithms, and a bidirectional Back-to-Back converter (RSC/GSC) with DC-link and grid filters; analyzed fault protection schemes (crowbar, series resistor, DC-chopper) and validated dynamic performance under wind speed and reactive power steps.
               </span>
+
             </div>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1e0LLxkks9L8fi8iAANpYdvmR4uf73i_9/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">PV Solar Panel Modelling (SDM/DDM) & Irradiation Approaches</a>
+              <a href="https://docs.google.com/presentation/d/1e0LLxkks9L8fi8iAANpYdvmR4uf73i_9/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">PV Solar Panel Modelling (SDM/DDM) & Irradiation Modelling</a>
               <span class="project-desc">
                 <span class="project-meta">Goal:</span> Construct single and double-diode solar panels models for comparative yield assessment.
-                <span class="project-meta">Tools:</span> NumPy, SciPy, MATLAB parameter estimators.
-                <span class="project-meta">Scope Solved:</span> Resolved mathematical solver convergence issues under variable atmospheric fronts by finding stable diode ideality boundaries.
+                <span class="project-meta">Tools:</span> NumPy, SciPy, MATLAB-simulink.
+                <span class="project-meta">Scope:</span> comparaison of market available solar panels datsheets and construct electrical and thermal models using SDM/DDM approaches , fit curve the models parameters using optimization techniques and couple the model with MPPT algorithms and real time weather forecast API and static irradiation models for different scenarios.
               </span>
             </div>
             <div class="project-item">
               <a href="https://docs.google.com/presentation/d/1tFZ3QEkR94QkOjJ0N1buvICEUNLGcM_7/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">EMS & Hybrid Inverter Modelling for BESS</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Build an intelligent grid storage infrastructure management loop.
-                <span class="project-meta">Tools:</span> Stateflow, Python, Modbus protocols.
-                <span class="project-meta">Scope Solved:</span> Engineered high-level EMS arbitration state machines that handle sudden grid peak-shaving needs while preserving battery health rules.
+                <span class="project-meta">Goal:</span> Build an intelligent grid-battery storage management loop.
+                <span class="project-meta">Tools:</span> Matlab-simulink, Python, CAN bus protocols.
+                <span class="project-meta">Scope :</span> Engineered high-level EMS arbitration state machines that handle VPP commands, local Grid price, battery SOC, Solar generation and vaious events such as islanding/ voltage & frequency drops while preserving battery health rules.
               </span>
             </div>
             <div class="project-item">
-              <a href="https://docs.google.com/presentation/d/1QXRfSxAKEkXrfaCnwQDAOQMa_j98chqA/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Sonnen Battery System Modeling & Efficiency Inspection</a>
+              <a href="https://docs.google.com/presentation/d/1QXRfSxAKEkXrfaCnwQDAOQMa_j98chqA/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Sonnen Battery Device Modeling & Efficiency Inspection</a>
               <span class="project-desc">
                 <span class="project-meta">Goal:</span> Inspect thermal degradation profiles and round-trip efficiency of standard residential storage units.
-                <span class="project-meta">Tools:</span> Python data wrappers, battery aging libraries.
-                <span class="project-meta">Scope Solved:</span> Isolated internal resistance trends that flagged transient bottlenecks, rearranging software safety triggers to optimize round-trip energy returns.
+                <span class="project-meta">Tools:</span> Matlab/Simulink, Python data wrappers.
+                <span class="project-meta">Scope:</span> Isolated battery electrical, BMS and thermal model on cell and module and pack levels to simulate and analyze round-trip energy efficency for different charge/discharge profiles.
               </span>
             </div>
           </div>
@@ -136,26 +142,67 @@
               <span class="project-desc">
                 <span class="project-meta">Goal:</span> Set up a multi-rate co-simulation orchestrator.
                 <span class="project-meta">Tools:</span> C++, Modelica/Dymola, FMI standard APIs.
-                <span class="project-meta">Scope Solved:</span> Formulated functional integration wrappers that synchronize models of vastly different time steps (fast electronics vs. slow mechanical bodies) with no master scheduling deadlocks.
+                <span class="project-meta">Scope:</span> Formulated functional integration wrappers that synchronize models of different time steps (fast electronics vs. thermal behaviour) using different solvers architectures and software coupling interfaces.
               </span>
             </div>
             <div class="project-item">
               <a href="https://docs.google.com/presentation/d/14EATY7BdW_pj3FGwkWwnnTB7-vFya3ui/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Optimization Solver Application & Adaptation</a>
               <span class="project-desc">
-                <span class="project-meta">Goal:</span> Refine and deploy non-linear solver architectures to handle heavily bounded layouts.
-                <span class="project-meta">Tools:</span> Python (SciPy Optimization, Pyomo), C++.
-                <span class="project-meta">Scope Solved:</span> Created constraint relaxation parameters over non-linear engineering models, speeding up solver iteration rates for real-time applications.
+                <span class="project-meta">Goal:</span> Refine and deploy Linear & non-linear solver architectures to handle Optimization problems.
+                <span class="project-meta">Tools:</span> Python (SciPy Optimization, Pyomo).
+                <span class="project-meta">Scope:</span> Created Optimization GUI tool to define and manage multi objective optimization constrainted problems using bounded parameters and different optimization algorithms for various applied physics applications.
               </span>
             </div>
             <div class="project-item">
               <a href="https://docs.google.com/presentation/d/1pheYoDKHjFPRoklZwW21E8DhC1xgAXYD/edit?usp=drive_link&ouid=100404207355272036705&rtpof=true&sd=true">Switched Reluctance Motor Rotor Geometry Optimization</a>
               <span class="project-desc">
                 <span class="project-meta">Goal:</span> Minimize native operational acoustic noise signature and structural ripples.
-                <span class="project-meta">Tools:</span> Ansys Maxwell (FEA), Genetic optimization solvers.
-                <span class="project-meta">Scope Solved:</span> Executed high-volume parametric pole-skewing sweeps to identify geometry thresholds that successfully limit ripples without shrinking motor efficiency.
+                <span class="project-meta">Tools:</span> Ansys Maxwell (FEA), DOE optimization.
+                <span class="project-meta">Scope:</span> Executed high-volume parametric pole-skewing sweeps to identify geometry thresholds that successfully limit ripples without shrinking motor average torque & efficiency.
               </span>
             </div>
+          </div>   
+          <div class="about-project-group block">
+            <h3>Continuous Learning &amp; State-of-the-Art Topics</h3>
+            
+            <div class="project-item">
+              <span class="project-title">Power Electronics</span>
+              <span class="project-desc">
+                Wide-bandgap semiconductors (SiC/GaN), high-frequency soft-switching topologies (LLC, DAB), gate-driver parasitics, and EMI/EMC mitigation.
+              </span>
+            </div>
+
+            <div class="project-item">
+              <span class="project-title">Machine Design &amp; Drives</span>
+              <span class="project-desc">
+                High-speed PMSM &amp; SynRM electromagnetic/thermal co-design, Field-Oriented Control (FOC), Model Predictive Control (MPC), and sensorless observers.
+              </span>
+            </div>
+
+            <div class="project-item">
+              <span class="project-title">Battery &amp; BMS</span>
+              <span class="project-desc">
+                Equivalent Circuit &amp; electrochemical cell modeling, Kalman-filter SoC/SoH/SoP estimation, active cell balancing, and thermal runaway diagnostics.
+              </span>
+            </div>
+
+            <div class="project-item">
+              <span class="project-title">Powertrain Systems &amp; Renewables</span>
+              <span class="project-desc">
+                 EV Powertrain architectures, EV chargers, Industrial powertrain energy management,BESS management & architectures,PV technology, Wind energy generation systems and Smart Power Grid.
+              </span>
+            </div>
+
+ 
+            <div class="project-item">
+              <span class="project-title">Engineering Tools &amp; Software</span>
+              <span class="project-desc">
+                Model-Based Design (MBD) workflows, Automotive SPICE (ASPICE) &amp; ISO 26262 functional safety standards, FMEA risk assessment, and Python simulation/optimization ecosystems (FMPy/FMI, SciPy, NumPy, ODE solvers).
+              </span>
+            </div>
+
           </div>
+
           <footer class="slide-footer">
             <div class="deck-move"><a href="index.html">Prev</a></div>
             <span class="slide-number">02 / 03</span>
@@ -166,6 +213,7 @@
               </button>
             </div>
           </footer>
+          
         </article>
       </div>
     </main>

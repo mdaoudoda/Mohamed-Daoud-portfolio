@@ -1,14 +1,26 @@
 .page-projects .slide-canvas {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   grid-template-areas:
     "title title title"
     "a b c"
+    "a b d"
     "nav nav nav";
 }
 
-.slide-banner { grid-area: title; display: flex; align-items: center; padding: 6px 12px; }
-.slide-banner h2 { margin: 0; color: var(--navy); font-size: 20px; text-transform: uppercase; }
+.slide-banner {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+.slide-banner h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 20px;
+  text-transform: uppercase;
+}
 
 .about-project-group {
   display: flex;
@@ -18,36 +30,71 @@
   overflow: hidden;
   background: var(--paper);
 }
+
 .about-project-group:nth-child(2) { grid-area: a; }
 .about-project-group:nth-child(3) { grid-area: b; }
 .about-project-group:nth-child(4) { grid-area: c; }
+.about-project-group:nth-child(5) { grid-area: d; }
+
 .about-project-group h3 {
   margin: 0;
   padding: 6px 8px;
   background: var(--navy);
   color: var(--ice);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.25;
 }
-.project-item { display: block; padding: 3px 8px 0; }
-.project-item a {
+
+.project-item {
+  display: block;
+  padding: 3px 8px 0;
+}
+
+.project-item a,
+.project-item .project-title {
   display: inline;
   color: #16325c;
-  font-size: 12.5px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 1.25;
   text-decoration: none;
 }
+
 .project-item a:hover,
-.project-item a:focus-visible { text-decoration: underline; }
+.project-item a:focus-visible {
+  text-decoration: underline;
+}
+
 .project-desc {
   display: block;
   margin-top: 2px;
   padding-left: 8px;
   border-left: 2px solid var(--border);
   color: #555;
-  font-size: 11px;
+  font-size: 7.5px;
   line-height: 1.25;
 }
-.project-meta { font-weight: 700; color: var(--navy); }
-.slide-footer { grid-area: nav; }
+
+/* Group 5 (Bottom-Right) Font Size Controls */
+.about-project-group:nth-child(5) h3 {
+  font-size: 11.5px;
+}
+
+.about-project-group:nth-child(5) .project-title,
+.about-project-group:nth-child(5) a {
+  font-size: 11.5px;
+}
+
+.about-project-group:nth-child(5) .project-desc {
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+.project-meta {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.slide-footer {
+  grid-area: nav;
+}

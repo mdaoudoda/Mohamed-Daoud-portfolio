@@ -22,7 +22,7 @@
   border-radius: 4px;
   background: var(--navy);
   color: var(--ice);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.4px;
   text-decoration: none;
@@ -53,7 +53,7 @@
   border-radius: 3px;
   background: #fff;
   color: var(--navy);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
 }
 .geo-card:not(.accent-ice) .skill-chip { background: var(--ice-2); }
